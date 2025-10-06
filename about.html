@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Traquiva's mission to democratize tech education through AI-powered learning.">
+    <title>About Us - Traquiva</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#667eea',
+                        secondary: '#764ba2',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        * { 
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        nav a.active {
+            color: #667eea;
+            font-weight: 600;
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition">
+                    <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">T</span>
+                    </div>
+                    <span class="text-2xl font-bold gradient-text">Traquiva</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="features.html" class="text-gray-700 hover:text-primary transition-all">Features</a>
+                    <a href="pricing.html" class="text-gray-700 hover:text-primary transition-all">Pricing</a>
+                    <a href="about.html" class="active text-gray-700 hover:text-primary transition-all">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary transition-all">Contact</a>
+                    <a href="#login" class="text-gray-700 hover:text-primary transition-all">Login</a>
+                    <a href="#signup" class="gradient-bg text-white px-6 py-3 rounded-lg hover:opacity-90 transition-all shadow-lg hover:shadow-xl">Start Free</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t shadow-lg">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Home</a>
+                <a href="features.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Features</a>
+                <a href="pricing.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Pricing</a>
+                <a href="about.html" class="block text-primary font-semibold py-2">About</a>
+                <a href="contact.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Contact</a>
+                <a href="#login" class="block text-gray-700 hover:text-primary py-2 transition-all">Login</a>
+                <a href="#signup" class="block gradient-bg text-white px-6 py-3 rounded-lg text-center mt-4 shadow-lg">Start Free</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6" data-aos="fade-up">
+                Our Mission: Democratize<br>Tech Education
+            </h1>
+            <p class="text-xl text-gray-100 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                We believe everyone deserves access to world-class tech education, regardless of their background or location.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
+                    <p class="text-lg text-gray-600 mb-4">
+                        Traquiva was born from a simple observation: traditional tech education is broken. 
+                        Bootcamps cost $15,000+, online courses lack personalization, and universities 
+                        teach outdated technologies.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        In 2024, our founders—former engineers from Google, Meta, and Amazon—decided to 
+                        build something different. They combined their expertise in education, AI, and 
+                        software development to create a platform that makes learning accessible, 
+                        personalized, and effective.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        Today, Traquiva serves over 10,000 students worldwide, helping them transition 
+                        into tech careers and achieve their dreams.
+                    </p>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop" alt="Team collaboration" class="rounded-xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission, Vision, Values -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Mission -->
+                <div class="bg-white rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
+                    <p class="text-gray-600">
+                        To democratize tech education by providing affordable, AI-powered learning 
+                        experiences that prepare students for real-world careers.
+                    </p>
+                </div>
+                
+                <!-- Vision -->
+                <div class="bg-white rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
+                    <p class="text-gray-600">
+                        A world where anyone, anywhere can access world-class tech education and 
+                        build a successful career in technology.
+                    </p>
+                </div>
+                
+                <!-- Values -->
+                <div class="bg-white rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Values</h3>
+                    <p class="text-gray-600">
+                        Accessibility, quality, innovation, community, and results. We're committed 
+                        to helping every student succeed.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem We're Solving -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">The Problem We're Solving</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Traditional tech education has three major problems that prevent people from succeeding.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Problem 1 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Too Expensive</h3>
+                    <p class="text-gray-600">
+                        Bootcamps cost $15,000-$20,000. That's a huge financial barrier that excludes 
+                        millions of talented people from entering tech.
+                    </p>
+                </div>
+                
+                <!-- Problem 2 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Outdated Content</h3>
+                    <p class="text-gray-600">
+                        Universities and many online courses teach technologies that companies stopped 
+                        using years ago. Students graduate unprepared.
+                    </p>
+                </div>
+                
+                <!-- Problem 3 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">No Personalization</h3>
+                    <p class="text-gray-600">
+                        One-size-fits-all curricula don't work. Everyone learns differently, but 
+                        traditional education treats all students the same.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Approach</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We've built a platform that solves these problems through technology and innovation.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Approach 1 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">AI-Powered Personalization</h3>
+                            <p class="text-gray-600">
+                                Our AI analyzes your learning style, pace, and goals to create a 
+                                personalized curriculum that adapts as you progress.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Approach 2 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Industry-Standard Projects</h3>
+                            <p class="text-gray-600">
+                                Build real applications using the latest technologies that companies 
+                                actually use. Create a portfolio that gets you hired.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Approach 3 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Expert Mentorship</h3>
+                            <p class="text-gray-600">
+                                Learn from developers at top tech companies. Get code reviews, 
+                                career advice, and personalized guidance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Approach 4 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Affordable Pricing</h3>
+                            <p class="text-gray-600">
+                                At $29/month, we're 50x cheaper than bootcamps. Start free and 
+                                upgrade when you're ready.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Impact</h2>
+                <p class="text-xl text-gray-600">Real results from real students</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-5xl font-bold gradient-text mb-2">10,000+</div>
+                    <div class="text-gray-600">Students Enrolled</div>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-5xl font-bold gradient-text mb-2">95%</div>
+                    <div class="text-gray-600">Success Rate</div>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-5xl font-bold gradient-text mb-2">500+</div>
+                    <div class="text-gray-600">Projects Built</div>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-5xl font-bold gradient-text mb-2">$75k</div>
+                    <div class="text-gray-600">Avg Starting Salary</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+                <p class="text-xl text-gray-600">Passionate educators and technologists building the future of learning</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://i.pravatar.cc/200?img=33" alt="CEO" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-900">Sarah Johnson</h3>
+                    <p class="text-primary font-semibold mb-2">CEO & Co-Founder</p>
+                    <p class="text-sm text-gray-600">Former Engineering Manager at Google</p>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://i.pravatar.cc/200?img=12" alt="CTO" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-900">Michael Chen</h3>
+                    <p class="text-primary font-semibold mb-2">CTO & Co-Founder</p>
+                    <p class="text-sm text-gray-600">Former Staff Engineer at Meta</p>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://i.pravatar.cc/200?img=5" alt="CPO" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-900">Emily Rodriguez</h3>
+                    <p class="text-primary font-semibold mb-2">Head of Product</p>
+                    <p class="text-sm text-gray-600">Former Product Lead at Amazon</p>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://i.pravatar.cc/200?img=52" alt="Head of Education" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-900">David Kim</h3>
+                    <p class="text-primary font-semibold mb-2">Head of Education</p>
+                    <p class="text-sm text-gray-600">Former CS Professor at MIT</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-white mb-6">
+                Join Our Mission
+            </h2>
+            <p class="text-xl text-gray-100 mb-8">
+                Be part of the movement to democratize tech education. Start learning today.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/signup" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
+                    Start Learning Free
+                </a>
+                <a href="/contact" class="bg-white/10 backdrop-blur text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/20 transition border-2 border-white">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">T</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">Traquiva</span>
+                    </div>
+                    <p class="text-sm text-gray-400">Master tech skills with AI-powered learning. From zero to industry-ready.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="features.html" class="hover:text-white transition">Features</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="projects.html" class="hover:text-white transition">Projects</a></li>
+                        <li><a href="mentors.html" class="hover:text-white transition">Mentors</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition">About</a></li>
+                        <li><a href="success.html" class="hover:text-white transition">Success Stories</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#cookies" class="hover:text-white transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-sm text-gray-400">© 2025 Traquiva. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100 });
+        
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

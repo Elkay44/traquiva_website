@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Traquiva Terms of Service - User agreement and acceptable use policy.">
+    <title>Terms of Service - Traquiva</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#667eea',
+                        secondary: '#764ba2',
+                        accent: '#f093fb',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        * { 
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        nav a.active {
+            color: #667eea;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition">
+                    <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">T</span>
+                    </div>
+                    <span class="text-2xl font-bold gradient-text">Traquiva</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="features.html" class="text-gray-700 hover:text-primary transition-all">Features</a>
+                    <a href="pricing.html" class="text-gray-700 hover:text-primary transition-all">Pricing</a>
+                    <a href="about.html" class="text-gray-700 hover:text-primary transition-all">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary transition-all">Contact</a>
+                    <a href="#login" class="text-gray-700 hover:text-primary transition-all">Login</a>
+                    <a href="#signup" class="gradient-bg text-white px-6 py-3 rounded-lg hover:opacity-90 transition-all shadow-lg hover:shadow-xl">Start Free</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t shadow-lg">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Home</a>
+                <a href="features.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Features</a>
+                <a href="pricing.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Pricing</a>
+                <a href="about.html" class="block text-gray-700 hover:text-primary py-2 transition-all">About</a>
+                <a href="contact.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Contact</a>
+                <a href="#login" class="block text-gray-700 hover:text-primary py-2 transition-all">Login</a>
+                <a href="#signup" class="block gradient-bg text-white px-6 py-3 rounded-lg text-center mt-4 shadow-lg">Start Free</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="pt-32 pb-12 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">Terms of Service</h1>
+            <p class="text-xl text-gray-100">Last Updated: October 6, 2025</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-12 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="prose prose-lg max-w-none">
+                
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>
+                <p class="text-gray-700 mb-6">
+                    Welcome to Traquiva! By accessing or using our platform, you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our services. We reserve the right to modify these Terms at any time, and your continued use of the platform constitutes acceptance of any changes.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 mt-8">2. Description of Service</h2>
+                <p class="text-gray-700 mb-6">
+                    Traquiva is an AI-powered learning platform that provides educational content, coding tools, mentorship, and career support for individuals learning technology skills. Our services include but are not limited to:
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                    <li>Access to learning materials and courses</li>
+                    <li>AI-powered code editor and development tools</li>
+                    <li>Personalized learning paths and curriculum</li>
+                    <li>Mentorship sessions with industry professionals</li>
+                    <li>Community features and collaboration tools</li>
+                    <li>Career support and job placement assistance</li>
+                </ul>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 mt-8">3. User Accounts</h2>
+                
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 mt-6">3.1 Account Registration</h3>
+                <p class="text-gray-700 mb-6">
+                    To access certain features, you must create an account. You agree to provide accurate, current, and complete information during registration and to update such information to keep it accurate, current, and complete.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 mt-6">3.2 Account Security</h3>
+                <p class="text-gray-700 mb-6">
+                    You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to immediately notify us of any unauthorized use of your account.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 mt-6">3.3 Account Termination</h3>
+                <p class="text-gray-700 mb-6">
+                    We reserve the right to suspend or terminate your account at any time for violation of these Terms or for any other reason we deem appropriate. You may also terminate your account at any time by contacting us.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 mt-8">4. Acceptable Use Policy</h2>
+                <p class="text-gray-700 mb-4">You agree not to:</p>
+                <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                    <li>Use the platform for any illegal or unauthorized purpose</li>
+                    <li>Violate any laws, regulations, or third-party rights</li>
+                    <li>Harass, abuse, or harm other users or mentors</li>
+                    <li>Upload malicious code, viruses, or harmful content</li>
+                    <li>Attempt to gain unauthorized access to our systems</li>
+                    <li>Scrape, copy, or redistribute our content without permission</li>
+                    <li>Impersonate another person or entity</li>
+                    <li>Share your account credentials with others</li>
+                    <li>Use automated tools to access the platform (except as authorized)</li>
+                    <li>Interfere with or disrupt the platform's operation</li>
+                </ul>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 mt-8">5. Intellectual Property Rights</h2>
+                
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 mt-6">5.1 Our Content</h3>
+                <p class="text-gray-700 mb-6">
+                    All content on the Traquiva platform, including but not limited to text, graphics, logos, images, videos, software, and course materials, is the property of Traquiva or its licensors and is protected by copyright, trademark, and other intellectual property laws.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 mt-6">5.2 Your Content</h3>
+                <p class="text-gray-700 mb-6">
+                    You retain ownership of any code, projects, or content you create using our platform. By using our services, you grant us a non-exclusive, worldwide, royalty-free license to use, reproduce, and display your content for the purpose of providing and improving our services.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 mt-6">5.3 License to Use</h3>
+                <p class="text-gray-700 mb-6">
+                    Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable license to access and use our platform for your personal, non-commercial use.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 mt-8">6. Payment and Subscriptions</h2>
+                
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 mt-6">6.1 Pricing</h3>
+                <p class="text-gray-700 mb-6">
+                    We offer various subscription plans as described on our pricing page. Prices are subject to change with notice. Any price changes will not affect your current subscription period.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 mt-6">6.2 Billing</h3>
+                <p class="text-gray-700 mb-6">
+                    Subscription fees are billed in advance on a recurring basis (monthly or annually). You authorize us to charge your payment method for all fees incurred. If payment fails, we may suspend your access until payment is received.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 mt-6">6.3 Refunds</h3>
+                <p class="text-gray-700 mb-6">
+                    We offer a 30-day money-back guarantee for new subscriptions. Refund requests must be submitted within 30 days of your initial purchase. Refunds are not available for renewals or after the 30-day period.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 mt-6">6.4 Cancellation</h3>
+                <p class="text-gray-700 mb-6">
+                    You may cancel your subscription at any time. Cancellations take effect at the end of your current billing period. You will retain access to paid features until the end of the billing period.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 mt-8">7. Mentorship Services</h2>
+                <p class="text-gray-700 mb-6">
+                    Mentorship sessions are provided by independent contractors. While we vet our mentors, we do not guarantee specific outcomes from mentorship sessions. Mentors provide guidance and advice, but you are responsible for your own learning and career decisions.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 mt-8">8. Disclaimers and Limitations of Liability</h2>
+                
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 mt-6">8.1 Service "As Is"</h3>
+                <p class="text-gray-700 mb-6">
+                    Our platform is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not guarantee that the platform will be uninterrupted, error-free, or secure.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 mt-6">8.2 No Employment Guarantee</h3>
+                <p class="text-gray-700 mb-6">
+                    While we provide career support and job placement assistance, we do not guarantee employment or specific salary outcomes. Your success depends on many factors, including your effort, skills, and market conditions.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 mt-6">8.3 Limitation of Liability</h3>
+                <p class="text-gray-700 mb-6">
+                    To the maximum extent permitted by law, Traquiva shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from your use of our services.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 mt-8">9. Indemnification</h2>
+                <p class="text-gray-700 mb-6">
+                    You agree to indemnify, defend, and hold harmless Traquiva, its officers, directors, employees, and agents from any claims, liabilities, damages, losses, and expenses arising from your violation of these Terms or your use of the platform.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 mt-8">10. Third-Party Services</h2>
+                <p class="text-gray-700 mb-6">
+                    Our platform may integrate with or link to third-party services (e.g., GitHub, payment processors). We are not responsible for the content, privacy policies, or practices of third-party services. Your use of third-party services is subject to their terms and conditions.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 mt-8">11. Privacy</h2>
+                <p class="text-gray-700 mb-6">
+                    Your privacy is important to us. Please review our <a href="privacy.html" class="text-primary hover:underline">Privacy Policy</a> to understand how we collect, use, and protect your personal information.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 mt-8">12. Dispute Resolution</h2>
+                
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 mt-6">12.1 Governing Law</h3>
+                <p class="text-gray-700 mb-6">
+                    These Terms shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law provisions.
+                </p>
+
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 mt-6">12.2 Arbitration</h3>
+                <p class="text-gray-700 mb-6">
+                    Any dispute arising from these Terms or your use of the platform shall be resolved through binding arbitration in accordance with the rules of the American Arbitration Association. You waive your right to participate in class action lawsuits.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 mt-8">13. Modifications to Terms</h2>
+                <p class="text-gray-700 mb-6">
+                    We reserve the right to modify these Terms at any time. We will notify you of material changes by posting the updated Terms on our website and updating the "Last Updated" date. Your continued use of the platform after such changes constitutes acceptance of the new Terms.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 mt-8">14. Severability</h2>
+                <p class="text-gray-700 mb-6">
+                    If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 mt-8">15. Entire Agreement</h2>
+                <p class="text-gray-700 mb-6">
+                    These Terms, together with our Privacy Policy, constitute the entire agreement between you and Traquiva regarding your use of the platform and supersede all prior agreements.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 mt-8">16. Contact Information</h2>
+                <p class="text-gray-700 mb-4">
+                    If you have questions about these Terms, please contact us:
+                </p>
+                <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                    <p class="text-gray-700 mb-2"><strong>Email:</strong> <a href="mailto:legal@traquiva.com" class="text-primary hover:underline">legal@traquiva.com</a></p>
+                    <p class="text-gray-700 mb-2"><strong>Address:</strong> Traquiva Inc., 123 Tech Street, San Francisco, CA 94105</p>
+                    <p class="text-gray-700"><strong>Phone:</strong> +1 (234) 567-890</p>
+                </div>
+
+                <div class="bg-blue-50 border-l-4 border-primary p-6 rounded mt-8">
+                    <p class="text-gray-700">
+                        <strong>By using Traquiva, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</strong>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">T</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">Traquiva</span>
+                    </div>
+                    <p class="text-sm text-gray-400">Master tech skills with AI-powered learning. From zero to industry-ready.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="features.html" class="hover:text-white transition">Features</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="projects.html" class="hover:text-white transition">Projects</a></li>
+                        <li><a href="mentors.html" class="hover:text-white transition">Mentors</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition">About</a></li>
+                        <li><a href="success.html" class="hover:text-white transition">Success Stories</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#cookies" class="hover:text-white transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-sm text-gray-400">© 2025 Traquiva. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

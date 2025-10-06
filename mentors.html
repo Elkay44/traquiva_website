@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Connect with expert mentors from top tech companies. Get personalized guidance, code reviews, and career advice from industry professionals.">
+    <title>Expert Mentors - Traquiva</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#667eea',
+                        secondary: '#764ba2',
+                        accent: '#f093fb',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        * { 
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        nav a.active {
+            color: #667eea;
+            font-weight: 600;
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+        .mentor-card {
+            transition: all 0.3s ease;
+        }
+        .mentor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition">
+                    <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">T</span>
+                    </div>
+                    <span class="text-2xl font-bold gradient-text">Traquiva</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="features.html" class="text-gray-700 hover:text-primary transition-all">Features</a>
+                    <a href="pricing.html" class="text-gray-700 hover:text-primary transition-all">Pricing</a>
+                    <a href="about.html" class="text-gray-700 hover:text-primary transition-all">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary transition-all">Contact</a>
+                    <a href="#login" class="text-gray-700 hover:text-primary transition-all">Login</a>
+                    <a href="#signup" class="gradient-bg text-white px-6 py-3 rounded-lg hover:opacity-90 transition-all shadow-lg hover:shadow-xl">Start Free</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t shadow-lg">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Home</a>
+                <a href="features.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Features</a>
+                <a href="pricing.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Pricing</a>
+                <a href="about.html" class="block text-gray-700 hover:text-primary py-2 transition-all">About</a>
+                <a href="contact.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Contact</a>
+                <a href="#login" class="block text-gray-700 hover:text-primary py-2 transition-all">Login</a>
+                <a href="#signup" class="block gradient-bg text-white px-6 py-3 rounded-lg text-center mt-4 shadow-lg">Start Free</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6" data-aos="fade-up">
+                Learn from the Best in Tech
+            </h1>
+            <p class="text-xl text-gray-100 max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">
+                Connect with 200+ expert mentors from Google, Meta, Amazon, Netflix, and more. 
+                Get personalized guidance to accelerate your career.
+            </p>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-white/10 backdrop-blur-lg rounded-xl p-6">
+                    <div class="text-4xl font-bold text-white mb-2">200+</div>
+                    <div class="text-gray-100 text-sm">Expert Mentors</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg rounded-xl p-6">
+                    <div class="text-4xl font-bold text-white mb-2">4.9/5</div>
+                    <div class="text-gray-100 text-sm">Average Rating</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg rounded-xl p-6">
+                    <div class="text-4xl font-bold text-white mb-2">10k+</div>
+                    <div class="text-gray-100 text-sm">Sessions Completed</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg rounded-xl p-6">
+                    <div class="text-4xl font-bold text-white mb-2">24hrs</div>
+                    <div class="text-gray-100 text-sm">Avg Response Time</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-8 bg-white border-b sticky top-16 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap gap-4 items-center justify-between">
+                <div class="flex flex-wrap gap-3">
+                    <button class="px-4 py-2 bg-primary text-white rounded-lg font-semibold hover:opacity-90 transition">All Mentors</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition">Web Development</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition">Mobile</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition">Data Science</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition">DevOps</button>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <input type="text" placeholder="Search mentors..." class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentors Grid -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Mentor Card 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg mentor-card" data-aos="fade-up">
+                    <div class="h-32 gradient-bg"></div>
+                    <div class="px-6 pb-6 -mt-16">
+                        <img src="https://i.pravatar.cc/150?img=33" alt="Alex Kumar" class="w-24 h-24 rounded-full border-4 border-white mx-auto mb-4">
+                        <div class="text-center mb-4">
+                            <h3 class="text-xl font-bold text-gray-900 mb-1">Alex Kumar</h3>
+                            <p class="text-sm text-gray-600 mb-2">Senior Software Engineer</p>
+                            <div class="flex items-center justify-center gap-1 mb-3">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Google</span>
+                            </div>
+                            <div class="flex items-center justify-center gap-1 mb-3">
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <span class="text-lg font-bold text-gray-900">4.9</span>
+                                <span class="text-sm text-gray-500">(127 reviews)</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-600 mb-3">Specializes in scalable backend systems, microservices, and cloud architecture. 8+ years at Google.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Python</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Go</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Kubernetes</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">AWS</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-600 mb-4">
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Usually responds in 2hrs</span>
+                            </div>
+                        </div>
+                        <button class="w-full gradient-bg text-white py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                            Book Session
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg mentor-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-32 bg-gradient-to-r from-pink-500 to-purple-600"></div>
+                    <div class="px-6 pb-6 -mt-16">
+                        <img src="https://i.pravatar.cc/150?img=27" alt="Maria Garcia" class="w-24 h-24 rounded-full border-4 border-white mx-auto mb-4">
+                        <div class="text-center mb-4">
+                            <h3 class="text-xl font-bold text-gray-900 mb-1">Maria Garcia</h3>
+                            <p class="text-sm text-gray-600 mb-2">Tech Lead</p>
+                            <div class="flex items-center justify-center gap-1 mb-3">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Meta</span>
+                            </div>
+                            <div class="flex items-center justify-center gap-1 mb-3">
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <span class="text-lg font-bold text-gray-900">5.0</span>
+                                <span class="text-sm text-gray-500">(94 reviews)</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-600 mb-3">Expert in React, frontend architecture, and performance optimization. Former Instagram team lead.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">React</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">TypeScript</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Next.js</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">GraphQL</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-600 mb-4">
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Usually responds in 1hr</span>
+                            </div>
+                        </div>
+                        <button class="w-full gradient-bg text-white py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                            Book Session
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg mentor-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-32 bg-gradient-to-r from-orange-500 to-red-600"></div>
+                    <div class="px-6 pb-6 -mt-16">
+                        <img src="https://i.pravatar.cc/150?img=52" alt="James Wilson" class="w-24 h-24 rounded-full border-4 border-white mx-auto mb-4">
+                        <div class="text-center mb-4">
+                            <h3 class="text-xl font-bold text-gray-900 mb-1">James Wilson</h3>
+                            <p class="text-sm text-gray-600 mb-2">Staff Engineer</p>
+                            <div class="flex items-center justify-center gap-1 mb-3">
+                                <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold">Amazon</span>
+                            </div>
+                            <div class="flex items-center justify-center gap-1 mb-3">
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <span class="text-lg font-bold text-gray-900">4.8</span>
+                                <span class="text-sm text-gray-500">(156 reviews)</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-600 mb-3">Specializes in distributed systems, AWS infrastructure, and system design interviews.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Java</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">AWS</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">System Design</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Docker</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-600 mb-4">
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Usually responds in 3hrs</span>
+                            </div>
+                        </div>
+                        <button class="w-full gradient-bg text-white py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                            Book Session
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 4 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg mentor-card" data-aos="fade-up">
+                    <div class="h-32 bg-gradient-to-r from-red-500 to-pink-600"></div>
+                    <div class="px-6 pb-6 -mt-16">
+                        <img src="https://i.pravatar.cc/150?img=44" alt="Lisa Chen" class="w-24 h-24 rounded-full border-4 border-white mx-auto mb-4">
+                        <div class="text-center mb-4">
+                            <h3 class="text-xl font-bold text-gray-900 mb-1">Lisa Chen</h3>
+                            <p class="text-sm text-gray-600 mb-2">Principal Engineer</p>
+                            <div class="flex items-center justify-center gap-1 mb-3">
+                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Netflix</span>
+                            </div>
+                            <div class="flex items-center justify-center gap-1 mb-3">
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <span class="text-lg font-bold text-gray-900">5.0</span>
+                                <span class="text-sm text-gray-500">(203 reviews)</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-600 mb-3">Expert in video streaming, real-time systems, and high-performance applications at scale.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Node.js</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">WebRTC</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Redis</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Kafka</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-600 mb-4">
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Usually responds in 4hrs</span>
+                            </div>
+                        </div>
+                        <button class="w-full gradient-bg text-white py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                            Book Session
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 5 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg mentor-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-32 bg-gradient-to-r from-green-500 to-teal-600"></div>
+                    <div class="px-6 pb-6 -mt-16">
+                        <img src="https://i.pravatar.cc/150?img=12" alt="David Park" class="w-24 h-24 rounded-full border-4 border-white mx-auto mb-4">
+                        <div class="text-center mb-4">
+                            <h3 class="text-xl font-bold text-gray-900 mb-1">David Park</h3>
+                            <p class="text-sm text-gray-600 mb-2">ML Engineer</p>
+                            <div class="flex items-center justify-center gap-1 mb-3">
+                                <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">OpenAI</span>
+                            </div>
+                            <div class="flex items-center justify-center gap-1 mb-3">
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <span class="text-lg font-bold text-gray-900">4.9</span>
+                                <span class="text-sm text-gray-500">(88 reviews)</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-600 mb-3">Specializes in machine learning, NLP, and building AI-powered applications from scratch.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Python</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">TensorFlow</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">PyTorch</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">NLP</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-600 mb-4">
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Usually responds in 2hrs</span>
+                            </div>
+                        </div>
+                        <button class="w-full gradient-bg text-white py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                            Book Session
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 6 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg mentor-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-32 bg-gradient-to-r from-indigo-500 to-blue-600"></div>
+                    <div class="px-6 pb-6 -mt-16">
+                        <img src="https://i.pravatar.cc/150?img=20" alt="Sarah Johnson" class="w-24 h-24 rounded-full border-4 border-white mx-auto mb-4">
+                        <div class="text-center mb-4">
+                            <h3 class="text-xl font-bold text-gray-900 mb-1">Sarah Johnson</h3>
+                            <p class="text-sm text-gray-600 mb-2">Mobile Lead</p>
+                            <div class="flex items-center justify-center gap-1 mb-3">
+                                <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold">Uber</span>
+                            </div>
+                            <div class="flex items-center justify-center gap-1 mb-3">
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <span class="text-lg font-bold text-gray-900">4.8</span>
+                                <span class="text-sm text-gray-500">(112 reviews)</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-600 mb-3">Expert in iOS and Android development, React Native, and mobile app architecture.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Swift</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Kotlin</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">React Native</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Flutter</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-600 mb-4">
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Usually responds in 1hr</span>
+                            </div>
+                        </div>
+                        <button class="w-full gradient-bg text-white py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                            Book Session
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12" data-aos="fade-up">
+                <button class="px-8 py-4 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition">
+                    Load More Mentors
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">How Mentorship Works</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Get personalized guidance from industry experts in just a few simple steps.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Browse Mentors</h3>
+                    <p class="text-gray-600">Filter by expertise, company, rating, and availability to find your perfect match.</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Book a Session</h3>
+                    <p class="text-gray-600">Choose a time that works for you and describe what you want to learn or discuss.</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Meet & Learn</h3>
+                    <p class="text-gray-600">Connect via video call, share your screen, and get real-time guidance and feedback.</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Grow Your Skills</h3>
+                    <p class="text-gray-600">Apply what you learned, book follow-ups, and accelerate your career growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Learn from the Best?
+            </h2>
+            <p class="text-xl text-gray-100 mb-8">
+                Join thousands of students who've accelerated their careers with expert mentorship.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#signup" class="bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition shadow-xl">
+                    Start Learning Free
+                </a>
+                <a href="pricing.html" class="bg-white/10 backdrop-blur-lg text-white border-2 border-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/20 transition">
+                    View Pricing
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">T</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">Traquiva</span>
+                    </div>
+                    <p class="text-sm text-gray-400">Master tech skills with AI-powered learning. From zero to industry-ready.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="features.html" class="hover:text-white transition">Features</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="projects.html" class="hover:text-white transition">Projects</a></li>
+                        <li><a href="mentors.html" class="hover:text-white transition">Mentors</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition">About</a></li>
+                        <li><a href="success.html" class="hover:text-white transition">Success Stories</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#cookies" class="hover:text-white transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-sm text-gray-400">© 2025 Traquiva. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100 });
+        
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

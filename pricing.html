@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Affordable pricing for world-class tech education. Start free, upgrade when ready. No hidden fees.">
+    <title>Pricing - Traquiva</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#667eea',
+                        secondary: '#764ba2',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        * { 
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        nav a.active {
+            color: #667eea;
+            font-weight: 600;
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition">
+                    <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">T</span>
+                    </div>
+                    <span class="text-2xl font-bold gradient-text">Traquiva</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="features.html" class="text-gray-700 hover:text-primary transition-all">Features</a>
+                    <a href="pricing.html" class="active text-gray-700 hover:text-primary transition-all">Pricing</a>
+                    <a href="about.html" class="text-gray-700 hover:text-primary transition-all">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary transition-all">Contact</a>
+                    <a href="#login" class="text-gray-700 hover:text-primary transition-all">Login</a>
+                    <a href="#signup" class="gradient-bg text-white px-6 py-3 rounded-lg hover:opacity-90 transition-all shadow-lg hover:shadow-xl">Start Free</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t shadow-lg">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Home</a>
+                <a href="features.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Features</a>
+                <a href="pricing.html" class="block text-primary font-semibold py-2">Pricing</a>
+                <a href="about.html" class="block text-gray-700 hover:text-primary py-2 transition-all">About</a>
+                <a href="contact.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Contact</a>
+                <a href="#login" class="block text-gray-700 hover:text-primary py-2 transition-all">Login</a>
+                <a href="#signup" class="block gradient-bg text-white px-6 py-3 rounded-lg text-center mt-4 shadow-lg">Start Free</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="pt-32 pb-12 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6" data-aos="fade-up">
+                Invest in Your Future
+            </h1>
+            <p class="text-xl text-gray-100 max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">
+                Plans for every learning journey. Start free, upgrade when you're ready.
+            </p>
+            
+            <!-- Billing Toggle -->
+            <div class="flex items-center justify-center gap-4 mb-8" data-aos="fade-up" data-aos-delay="200">
+                <span class="text-white font-semibold">Monthly</span>
+                <button id="billing-toggle" class="relative w-16 h-8 bg-white/30 rounded-full transition" onclick="toggleBilling()">
+                    <div id="toggle-circle" class="absolute top-1 left-1 w-6 h-6 bg-white rounded-full transition-transform"></div>
+                </button>
+                <span class="text-white font-semibold">Yearly <span class="text-yellow-300 text-sm">(Save 17%)</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 -mt-20">
+                
+                <!-- Free Tier -->
+                <div class="bg-white rounded-2xl p-8 shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Free</h3>
+                        <div class="mb-4">
+                            <span class="text-5xl font-bold text-gray-900">$0</span>
+                            <span class="text-gray-600">/month</span>
+                        </div>
+                        <p class="text-gray-600">Perfect for getting started</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Access to 10 beginner projects</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Basic code editor</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Community forum access</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Progress tracking</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Self-paced learning</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-gray-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-400">AI assistant (limited)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-gray-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="text-gray-400">Mentor sessions</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="/signup" class="block w-full text-center bg-gray-100 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+                        Get Started Free
+                    </a>
+                </div>
+                
+                <!-- Pro Tier (Most Popular) -->
+                <div class="bg-gradient-to-br from-primary to-secondary rounded-2xl p-8 text-white relative transform scale-105 shadow-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-gray-900 px-6 py-2 rounded-full text-sm font-bold">
+                        MOST POPULAR
+                    </div>
+                    
+                    <div class="text-center mb-8 mt-4">
+                        <h3 class="text-2xl font-bold mb-2">Pro</h3>
+                        <div class="mb-4">
+                            <span id="pro-price" class="text-5xl font-bold">$29</span>
+                            <span class="text-gray-100">/month</span>
+                        </div>
+                        <p class="text-gray-100">For serious learners</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span><strong>Everything in Free, plus:</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Unlimited project access (500+)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>AI assistant (unlimited queries)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>2 mentor sessions per month</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Advanced code editor features</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>GitHub integration</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Priority support</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Certificates of completion</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Job board access</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="/signup?plan=pro" class="block w-full text-center bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                        Start 7-Day Free Trial
+                    </a>
+                    <p class="text-center text-sm text-gray-100 mt-3">No credit card required</p>
+                </div>
+                
+                <!-- Enterprise Tier -->
+                <div class="bg-white rounded-2xl p-8 shadow-xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
+                        <div class="mb-4">
+                            <span class="text-5xl font-bold text-gray-900">Custom</span>
+                        </div>
+                        <p class="text-gray-600">For teams and organizations</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700"><strong>Everything in Pro, plus:</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Unlimited mentor sessions</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Custom curriculum design</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Team collaboration tools</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Admin dashboard & analytics</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">API access</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Dedicated account manager</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">White-label options</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">SLA guarantee</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="/contact?plan=enterprise" class="block w-full text-center bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition">
+                        Contact Sales
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Comparison Table -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12" data-aos="fade-up">
+                Compare Plans
+            </h2>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full" data-aos="fade-up">
+                    <thead>
+                        <tr class="border-b-2 border-gray-200">
+                            <th class="text-left py-4 px-6 font-semibold text-gray-900">Feature</th>
+                            <th class="text-center py-4 px-6 font-semibold text-gray-900">Free</th>
+                            <th class="text-center py-4 px-6 font-semibold text-primary">Pro</th>
+                            <th class="text-center py-4 px-6 font-semibold text-gray-900">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="py-4 px-6 text-gray-700">Projects Access</td>
+                            <td class="py-4 px-6 text-center text-gray-600">10 projects</td>
+                            <td class="py-4 px-6 text-center text-primary font-semibold">500+ projects</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 text-gray-700">Code Editor</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Basic</td>
+                            <td class="py-4 px-6 text-center text-primary font-semibold">Advanced</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Advanced + Custom</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 text-gray-700">AI Assistant</td>
+                            <td class="py-4 px-6 text-center text-gray-600">10 queries/day</td>
+                            <td class="py-4 px-6 text-center text-primary font-semibold">Unlimited</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 text-gray-700">Mentor Sessions</td>
+                            <td class="py-4 px-6 text-center text-gray-400">—</td>
+                            <td class="py-4 px-6 text-center text-primary font-semibold">2/month</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 text-gray-700">GitHub Integration</td>
+                            <td class="py-4 px-6 text-center text-gray-400">—</td>
+                            <td class="py-4 px-6 text-center">
+                                <svg class="w-6 h-6 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </td>
+                            <td class="py-4 px-6 text-center">
+                                <svg class="w-6 h-6 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 text-gray-700">Certificates</td>
+                            <td class="py-4 px-6 text-center text-gray-400">—</td>
+                            <td class="py-4 px-6 text-center">
+                                <svg class="w-6 h-6 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </td>
+                            <td class="py-4 px-6 text-center">
+                                <svg class="w-6 h-6 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 text-gray-700">Team Collaboration</td>
+                            <td class="py-4 px-6 text-center text-gray-400">—</td>
+                            <td class="py-4 px-6 text-center text-gray-400">—</td>
+                            <td class="py-4 px-6 text-center">
+                                <svg class="w-6 h-6 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 text-gray-700">API Access</td>
+                            <td class="py-4 px-6 text-center text-gray-400">—</td>
+                            <td class="py-4 px-6 text-center text-gray-400">—</td>
+                            <td class="py-4 px-6 text-center">
+                                <svg class="w-6 h-6 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12" data-aos="fade-up">
+                Frequently Asked Questions
+            </h2>
+            
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="bg-white rounded-lg p-6 shadow" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Can I switch plans anytime?</h3>
+                    <p class="text-gray-600">Yes! You can upgrade, downgrade, or cancel your plan at any time. Changes take effect immediately, and we'll prorate any charges.</p>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="bg-white rounded-lg p-6 shadow" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Is there a free trial for Pro?</h3>
+                    <p class="text-gray-600">Yes! Pro comes with a 7-day free trial. No credit card required. Cancel anytime during the trial with no charges.</p>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="bg-white rounded-lg p-6 shadow" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">What payment methods do you accept?</h3>
+                    <p class="text-gray-600">We accept all major credit cards (Visa, Mastercard, Amex), PayPal, and bank transfers for Enterprise plans.</p>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="bg-white rounded-lg p-6 shadow" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Do you offer student discounts?</h3>
+                    <p class="text-gray-600">Yes! Students get 50% off Pro plans with a valid .edu email address. Contact support@traquiva.com to apply.</p>
+                </div>
+                
+                <!-- FAQ 5 -->
+                <div class="bg-white rounded-lg p-6 shadow" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">What's your refund policy?</h3>
+                    <p class="text-gray-600">We offer a 30-day money-back guarantee. If you're not satisfied, contact us for a full refund—no questions asked.</p>
+                </div>
+                
+                <!-- FAQ 6 -->
+                <div class="bg-white rounded-lg p-6 shadow" data-aos="fade-up" data-aos-delay="600">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">How do mentor sessions work?</h3>
+                    <p class="text-gray-600">Book 1-on-1 video sessions with expert developers. Sessions are 30-60 minutes and can be used for code reviews, career advice, or technical questions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Money-Back Guarantee -->
+    <section class="py-12 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <div class="bg-green-50 border-2 border-green-200 rounded-xl p-8">
+                <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">30-Day Money-Back Guarantee</h3>
+                <p class="text-gray-700">Try Traquiva risk-free. If you're not completely satisfied, we'll refund your money—no questions asked.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-white mb-6">
+                Ready to Start Learning?
+            </h2>
+            <p class="text-xl text-gray-100 mb-8">
+                Join 10,000+ students building their dream careers with Traquiva.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/signup" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
+                    Start Free Today
+                </a>
+                <a href="/contact" class="bg-white/10 backdrop-blur text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/20 transition border-2 border-white">
+                    Talk to Sales
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">T</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">Traquiva</span>
+                    </div>
+                    <p class="text-sm text-gray-400">Master tech skills with AI-powered learning. From zero to industry-ready.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="features.html" class="hover:text-white transition">Features</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="projects.html" class="hover:text-white transition">Projects</a></li>
+                        <li><a href="mentors.html" class="hover:text-white transition">Mentors</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition">About</a></li>
+                        <li><a href="success.html" class="hover:text-white transition">Success Stories</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#cookies" class="hover:text-white transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-sm text-gray-400">© 2025 Traquiva. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100 });
+        
+        let isYearly = false;
+        
+        function toggleBilling() {
+            isYearly = !isYearly;
+            const toggle = document.getElementById('toggle-circle');
+            const proPrice = document.getElementById('pro-price');
+            
+            if (isYearly) {
+                toggle.style.transform = 'translateX(32px)';
+                proPrice.textContent = '$24';
+            } else {
+                toggle.style.transform = 'translateX(0)';
+                proPrice.textContent = '$29';
+            }
+        }
+        
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
