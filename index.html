@@ -836,6 +836,52 @@
         </div>
     </footer>
     
+    <!-- Demo Video Modal -->
+    <div id="demo" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full overflow-hidden shadow-2xl relative" data-aos="zoom-in">
+            <!-- Close Button -->
+            <button onclick="closeDemo()" class="absolute top-4 right-4 z-10 bg-white rounded-full p-2 hover:bg-gray-100 transition shadow-lg">
+                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            
+            <!-- Modal Header -->
+            <div class="bg-gradient-to-r from-primary to-secondary p-6 text-white">
+                <h3 class="text-2xl font-bold mb-2">See Traquiva in Action</h3>
+                <p class="text-gray-100">Watch how our platform transforms beginners into professional developers</p>
+            </div>
+            
+            <!-- Video Container -->
+            <div class="relative bg-gray-900" style="padding-bottom: 56.25%;">
+                <iframe 
+                    id="demo-video"
+                    class="absolute inset-0 w-full h-full"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1" 
+                    title="Traquiva Platform Demo" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="p-6 bg-gray-50 border-t border-gray-200">
+                <div class="flex flex-col sm:flex-row gap-4 items-center justify-between">
+                    <p class="text-gray-600 text-sm">Ready to start your journey?</p>
+                    <div class="flex gap-3">
+                        <a href="/signup" class="bg-primary text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-secondary transition">
+                            Start Free Trial
+                        </a>
+                        <a href="/features" class="bg-gray-200 text-gray-700 px-6 py-2.5 rounded-lg font-semibold hover:bg-gray-300 transition">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- AOS Animation Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -849,6 +895,51 @@
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
+        
+        // Demo Modal Functions
+        function openDemo() {
+            const modal = document.getElementById('demo');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeDemo() {
+            const modal = document.getElementById('demo');
+            const video = document.getElementById('demo-video');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+            
+            // Stop video when closing
+            video.src = video.src;
+        }
+        
+        // Open demo when clicking #demo links
+        document.addEventListener('DOMContentLoaded', function() {
+            const demoLinks = document.querySelectorAll('a[href="#demo"]');
+            demoLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openDemo();
+                });
+            });
+            
+            // Close modal when clicking outside
+            const modal = document.getElementById('demo');
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeDemo();
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeDemo();
+                }
+            });
+        });
     </script>
 </body>
 </html>
