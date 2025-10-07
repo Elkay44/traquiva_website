@@ -44,21 +44,22 @@
             scroll-behavior: smooth;
         }
         
+        /* Professional, lighter gradient - Blue tones */
         .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
         }
         
         .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
         .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
         }
         
         .hover-lift {
@@ -66,17 +67,8 @@
         }
         
         .hover-lift:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-        
-        .code-animation {
-            animation: typing 3s steps(40) infinite;
-        }
-        
-        @keyframes typing {
-            0%, 100% { width: 0; }
-            50% { width: 100%; }
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
         }
         
         .pulse-slow {
@@ -85,12 +77,12 @@
         
         /* Enhanced Navigation */
         nav a.active {
-            color: #667eea;
+            color: #2563eb;
             font-weight: 600;
         }
         
         nav a:not(.active):hover {
-            color: #667eea;
+            color: #2563eb;
         }
         
         /* Smooth transitions */
@@ -103,18 +95,18 @@
             transition: max-height 0.3s ease-in-out;
         }
         
-        /* Card hover effects */
+        /* Card hover effects - Lighter shadow */
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .card-hover:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.15);
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-white">
     
     <!-- Navigation -->
     <nav class="fixed w-full top-0 z-50 bg-white shadow-md">
@@ -332,7 +324,7 @@
     </section>
 
     <!-- Solution Section -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -623,7 +615,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-gray-50">
+    <section id="testimonials" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -866,7 +858,7 @@
             </div>
             
             <!-- Modal Footer -->
-            <div class="p-6 bg-gray-50 border-t border-gray-200">
+            <div class="p-6 bg-slate-50 border-t border-gray-200">
                 <div class="flex flex-col sm:flex-row gap-4 items-center justify-between">
                     <p class="text-gray-600 text-sm">Ready to start your journey?</p>
                     <div class="flex gap-3">
