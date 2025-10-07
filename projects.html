@@ -52,9 +52,9 @@
     <nav class="fixed w-full top-0 z-50 bg-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="flex items-center hover:opacity-90 transition">
-                    <div class="w-12 h-12 bg-black flex items-center justify-center mr-1">
-                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <a href="index.html" class="flex items-center space-x-1 hover:opacity-90 transition">
+                    <div class="w-12 h-12 flex items-center justify-center">
+                        <svg class="w-9 h-9 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
@@ -93,32 +93,37 @@
     </nav>
     
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 bg-black">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section class="pt-32 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        <!-- Subtle Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-96 h-96 bg-blue-500 blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500 blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 class="text-5xl md:text-6xl font-light text-white mb-8" data-aos="fade-up">
-                500+ Real-World Projects
+                <span class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">500+ Real-World</span> Projects
             </h1>
-            <p class="text-xl text-gray-200 max-w-3xl mx-auto mb-10 font-light" data-aos="fade-up" data-aos-delay="100">
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed" data-aos="fade-up" data-aos-delay="100">
                 Build portfolio-ready applications that companies actually use. From beginner to advanced, 
                 master real-world development with hands-on projects.
             </p>
             
             <!-- Stats -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                <div class="border border-white/20 p-6">
-                    <div class="text-4xl font-light text-white mb-2">500+</div>
+                <div class="backdrop-blur-sm bg-white/5 border border-white/20 p-6 hover:bg-white/10 transition-all duration-300">
+                    <div class="text-4xl font-light bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-2">500+</div>
                     <div class="text-gray-300 text-sm font-light">Projects</div>
                 </div>
-                <div class="border border-white/20 p-6">
-                    <div class="text-4xl font-light text-white mb-2">15+</div>
+                <div class="backdrop-blur-sm bg-white/5 border border-white/20 p-6 hover:bg-white/10 transition-all duration-300">
+                    <div class="text-4xl font-light bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-2">15+</div>
                     <div class="text-gray-300 text-sm font-light">Tech Stacks</div>
                 </div>
-                <div class="border border-white/20 p-6">
-                    <div class="text-4xl font-light text-white mb-2">100%</div>
+                <div class="backdrop-blur-sm bg-white/5 border border-white/20 p-6 hover:bg-white/10 transition-all duration-300">
+                    <div class="text-4xl font-light bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-2">100%</div>
                     <div class="text-gray-300 text-sm font-light">Industry Standard</div>
                 </div>
-                <div class="border border-white/20 p-6">
-                    <div class="text-4xl font-light text-white mb-2">24/7</div>
+                <div class="backdrop-blur-sm bg-white/5 border border-white/20 p-6 hover:bg-white/10 transition-all duration-300">
+                    <div class="text-4xl font-light bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-2">24/7</div>
                     <div class="text-gray-300 text-sm font-light">AI Support</div>
                 </div>
             </div>
@@ -126,15 +131,15 @@
     </section>
 
     <!-- Filter Section -->
-    <section class="py-8 bg-white border-b sticky top-20 z-40">
+    <section class="py-8 bg-white border-b sticky top-20 z-40 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap gap-4 justify-center">
-                <button class="px-6 py-3 bg-black text-white font-light hover:bg-black/90 transition-colors duration-200">All Projects</button>
-                <button class="px-6 py-3 bg-white text-black font-light border border-gray-200 hover:bg-gray-50 transition">Web Development</button>
-                <button class="px-6 py-3 bg-white text-black font-light border border-gray-200 hover:bg-gray-50 transition">Mobile Apps</button>
-                <button class="px-6 py-3 bg-white text-black font-light border border-gray-200 hover:bg-gray-50 transition">AI & ML</button>
-                <button class="px-6 py-3 bg-white text-black font-light border border-gray-200 hover:bg-gray-50 transition">Data Science</button>
-                <button class="px-6 py-3 bg-white text-black font-light border border-gray-200 hover:bg-gray-50 transition">DevOps</button>
+                <button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-light hover:from-blue-600 hover:to-indigo-700 transition-all duration-200 shadow-md">All Projects</button>
+                <button class="px-6 py-3 bg-white text-slate-700 font-light border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-200">Web Development</button>
+                <button class="px-6 py-3 bg-white text-slate-700 font-light border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-200">Mobile Apps</button>
+                <button class="px-6 py-3 bg-white text-slate-700 font-light border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-200">AI & ML</button>
+                <button class="px-6 py-3 bg-white text-slate-700 font-light border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-200">Data Science</button>
+                <button class="px-6 py-3 bg-white text-slate-700 font-light border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-200">DevOps</button>
             </div>
         </div>
     </section>
@@ -149,8 +154,8 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <!-- Project 1 -->
-                    <div class="bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow transition-all duration-300" data-aos="fade-up">
-                        <div class="h-48 bg-black flex items-center justify-center">
+                    <div class="bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg hover:border-blue-300 transition-all duration-300 group" data-aos="fade-up">
+                        <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center group-hover:from-blue-600 group-hover:to-indigo-700 transition-all duration-300">
                             <div class="text-white text-6xl">🛒</div>
                         </div>
                         <div class="p-6">
