@@ -12,9 +12,9 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#667eea',
-                        secondary: '#764ba2',
-                        accent: '#f093fb',
+                        primary: '#000000',
+                        secondary: '#111111',
+                        accent: '#333333',
                     }
                 }
             }
@@ -29,16 +29,13 @@
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .gradient-bg { background: #000000; }
         .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #000000;
         }
         nav a.active {
-            color: #667eea;
-            font-weight: 600;
+            color: #000000;
+            font-weight: 400;
         }
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -56,18 +53,20 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition">
-                    <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold text-xl">T</span>
+                    <div class="w-10 h-10 text-black flex items-center justify-center">
+                        <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
                     </div>
-                    <span class="text-2xl font-bold gradient-text">Traquiva</span>
+                    <span class="text-2xl font-light text-black tracking-tight">Traquiva</span>
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="features.html" class="text-gray-700 hover:text-primary transition-all">Features</a>
-                    <a href="pricing.html" class="text-gray-700 hover:text-primary transition-all">Pricing</a>
-                    <a href="about.html" class="text-gray-700 hover:text-primary transition-all">About</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-primary transition-all">Contact</a>
-                    <a href="#login" class="text-gray-700 hover:text-primary transition-all">Login</a>
-                    <a href="#signup" class="gradient-bg text-white px-6 py-3 rounded-lg hover:opacity-90 transition-all shadow-lg hover:shadow-xl">Start Free</a>
+                    <a href="features.html" class="text-gray-500 hover:text-black transition-all">Features</a>
+                    <a href="pricing.html" class="text-gray-500 hover:text-black transition-all">Pricing</a>
+                    <a href="about.html" class="text-gray-500 hover:text-black transition-all">About</a>
+                    <a href="contact.html" class="text-gray-500 hover:text-black transition-all">Contact</a>
+                    <a href="#login" class="text-gray-500 hover:text-black transition-all">Login</a>
+                    <a href="#signup" class="bg-black text-white px-6 py-3 rounded-md hover:bg-black/90 transition-colors duration-200">Start Free</a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
@@ -130,12 +129,12 @@
     <section class="py-8 bg-white border-b sticky top-16 z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap gap-3 justify-center">
-                <button class="px-6 py-2 bg-primary text-white rounded-lg font-semibold hover:opacity-90 transition">All Projects</button>
-                <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition">Web Development</button>
-                <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition">Mobile Apps</button>
-                <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition">AI & ML</button>
-                <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition">Data Science</button>
-                <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition">DevOps</button>
+                <button class="px-6 py-2 bg-black text-white rounded-md font-normal hover:bg-black/90 transition-colors duration-200">All Projects</button>
+                <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-md font-normal hover:bg-gray-200 transition">Web Development</button>
+                <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-md font-normal hover:bg-gray-200 transition">Mobile Apps</button>
+                <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-md font-normal hover:bg-gray-200 transition">AI & ML</button>
+                <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-md font-normal hover:bg-gray-200 transition">Data Science</button>
+                <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-md font-normal hover:bg-gray-200 transition">DevOps</button>
             </div>
         </div>
     </section>
@@ -400,10 +399,10 @@
                 Start with beginner projects and work your way up to advanced applications.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#signup" class="bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition shadow-xl">
+                <a href="#signup" class="bg-white text-black px-8 py-4 rounded-md font-normal text-lg hover:bg-gray-100 transition">
                     Start Building Free
                 </a>
-                <a href="pricing.html" class="bg-white/10 backdrop-blur-lg text-white border-2 border-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/20 transition">
+                <a href="pricing.html" class="border border-white text-white px-8 py-4 rounded-md font-normal text-lg hover:bg-white/20 transition">
                     View Pricing
                 </a>
             </div>
