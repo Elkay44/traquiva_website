@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Project details and learning path">
+    <title>Project Details | Traquiva</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        * { 
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-2 hover:opacity-90 transition">
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    <span class="text-2xl font-semibold text-gray-900">Traquiva</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="features.html" class="text-gray-700 hover:text-blue-600 transition font-medium">Features</a>
+                    <a href="pricing.html" class="text-gray-700 hover:text-blue-600 transition font-medium">Pricing</a>
+                    <a href="projects-improved.html" class="text-blue-600 font-medium">Projects</a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-600 transition font-medium">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition font-medium">Contact</a>
+                    <a href="http://localhost:3000/login" class="text-gray-700 hover:text-blue-600 transition font-medium">Login</a>
+                    <a href="http://localhost:3000/signup" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2.5 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg font-medium">Start Free</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Breadcrumb -->
+    <div class="pt-20 pb-4 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center space-x-2 text-sm text-gray-600">
+                <a href="index.html" class="hover:text-blue-600">Home</a>
+                <span>/</span>
+                <a href="projects-improved.html" class="hover:text-blue-600">Projects</a>
+                <span>/</span>
+                <span id="breadcrumb-title" class="text-gray-900 font-medium">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Detail -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-12">
+                <!-- Main Content -->
+                <div class="lg:col-span-2">
+                    <!-- Project Header -->
+                    <div id="project-header" class="mb-12">
+                        <!-- Dynamic content -->
+                    </div>
+
+                    <!-- What You'll Build -->
+                    <div class="mb-12">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">What You'll Build</h2>
+                        <div id="features-list" class="space-y-4">
+                            <!-- Dynamic content -->
+                        </div>
+                    </div>
+
+                    <!-- Learning Path -->
+                    <div class="mb-12">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Learning Path</h2>
+                        <div id="learning-path" class="space-y-4">
+                            <!-- Dynamic content -->
+                        </div>
+                    </div>
+
+                    <!-- Prerequisites -->
+                    <div class="mb-12">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Prerequisites</h2>
+                        <div id="prerequisites" class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                            <!-- Dynamic content -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24 space-y-6">
+                        <!-- Project Card -->
+                        <div id="project-card" class="bg-white border border-gray-200 rounded-xl shadow-lg p-6">
+                            <!-- Dynamic content -->
+                        </div>
+
+                        <!-- Tech Stack -->
+                        <div class="bg-white border border-gray-200 rounded-xl p-6">
+                            <h3 class="font-bold text-gray-900 mb-4">Tech Stack</h3>
+                            <div id="tech-stack" class="flex flex-wrap gap-2">
+                                <!-- Dynamic content -->
+                            </div>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="bg-white border border-gray-200 rounded-xl p-6">
+                            <h3 class="font-bold text-gray-900 mb-4">Project Stats</h3>
+                            <div id="project-stats" class="space-y-3">
+                                <!-- Dynamic content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 to-indigo-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                Ready to Start This Project?
+            </h2>
+            <p class="text-xl text-blue-100 mb-8">
+                Join thousands of developers building real-world applications
+            </p>
+            <a href="http://localhost:3000/signup" class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition shadow-lg">
+                Start Building Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        <span class="text-xl font-bold text-white">Traquiva</span>
+                    </div>
+                    <p class="text-sm">Master tech skills with AI-powered learning.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="features.html" class="hover:text-white transition">Features</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="projects-improved.html" class="hover:text-white transition">Projects</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition">About</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="privacy.html" class="hover:text-white transition">Privacy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-sm">© 2025 Traquiva. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Get project ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = parseInt(urlParams.get('id'));
+
+        // Get projects from localStorage
+        const projects = JSON.parse(localStorage.getItem('traquiva_projects') || '[]');
+        const project = projects.find(p => p.id === projectId);
+
+        if (!project) {
+            window.location.href = 'projects-improved.html';
+        } else {
+            // Update page title and breadcrumb
+            document.title = `${project.title} | Traquiva`;
+            document.getElementById('breadcrumb-title').textContent = project.title;
+
+            // Render project header
+            document.getElementById('project-header').innerHTML = `
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-20 h-20 bg-gradient-to-br ${project.gradient} rounded-xl flex items-center justify-center text-4xl shadow-lg">
+                        ${project.icon}
+                    </div>
+                    <div>
+                        <h1 class="text-4xl font-bold text-gray-900 mb-2">${project.title}</h1>
+                        <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">${project.level}</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-semibold">${project.type}</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-xl text-gray-600 leading-relaxed">${project.description}</p>
+            `;
+
+            // Render features
+            const features = getProjectFeatures(project.category);
+            document.getElementById('features-list').innerHTML = features.map(f => `
+                <div class="flex items-start gap-3">
+                    <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div>
+                        <h4 class="font-semibold text-gray-900">${f.title}</h4>
+                        <p class="text-gray-600 text-sm">${f.description}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            // Render learning path
+            const learningPath = getLearningPath(project.level);
+            document.getElementById('learning-path').innerHTML = learningPath.map((step, index) => `
+                <div class="flex items-start gap-4">
+                    <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                        ${index + 1}
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-gray-900 mb-1">${step.title}</h4>
+                        <p class="text-gray-600 text-sm">${step.description}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            // Render prerequisites
+            const prerequisites = getPrerequisites(project.level);
+            document.getElementById('prerequisites').innerHTML = `
+                <ul class="space-y-2">
+                    ${prerequisites.map(p => `
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            ${p}
+                        </li>
+                    `).join('')}
+                </ul>
+            `;
+
+            // Render project card
+            document.getElementById('project-card').innerHTML = `
+                <div class="w-full h-48 bg-gradient-to-br ${project.gradient} rounded-lg flex items-center justify-center text-6xl mb-6">
+                    ${project.icon}
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-600">Duration</span>
+                        <span class="font-semibold text-gray-900">${project.hours} hours</span>
+                    </div>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-600">Level</span>
+                        <span class="font-semibold text-gray-900">${project.level}</span>
+                    </div>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-600">Category</span>
+                        <span class="font-semibold text-gray-900">${getCategoryName(project.category)}</span>
+                    </div>
+                    <a href="http://localhost:3000/signup" class="block w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition shadow-md hover:shadow-lg">
+                        Start This Project
+                    </a>
+                </div>
+            `;
+
+            // Render tech stack
+            document.getElementById('tech-stack').innerHTML = project.tech.map(t => `
+                <span class="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium">${t}</span>
+            `).join('');
+
+            // Render stats
+            document.getElementById('project-stats').innerHTML = `
+                <div class="flex items-center justify-between text-sm">
+                    <span class="text-gray-600">Students</span>
+                    <span class="font-semibold text-gray-900">${Math.floor(Math.random() * 5000 + 1000)}</span>
+                </div>
+                <div class="flex items-center justify-between text-sm">
+                    <span class="text-gray-600">Rating</span>
+                    <span class="font-semibold text-gray-900">4.${Math.floor(Math.random() * 3 + 7)}/5.0</span>
+                </div>
+                <div class="flex items-center justify-between text-sm">
+                    <span class="text-gray-600">Completion Rate</span>
+                    <span class="font-semibold text-gray-900">${Math.floor(Math.random() * 20 + 75)}%</span>
+                </div>
+            `;
+        }
+
+        // Helper functions
+        function getProjectFeatures(category) {
+            const features = {
+                web: [
+                    { title: "Responsive Design", description: "Mobile-first UI that works on all devices" },
+                    { title: "User Authentication", description: "Secure login and registration system" },
+                    { title: "Database Integration", description: "Store and retrieve data efficiently" },
+                    { title: "API Development", description: "RESTful APIs for frontend-backend communication" },
+                    { title: "Deployment", description: "Deploy to production with CI/CD" }
+                ],
+                mobile: [
+                    { title: "Native Features", description: "Camera, GPS, notifications, and more" },
+                    { title: "State Management", description: "Efficient app state handling" },
+                    { title: "API Integration", description: "Connect to backend services" },
+                    { title: "Offline Support", description: "Work without internet connection" },
+                    { title: "App Store Ready", description: "Prepare for iOS/Android deployment" }
+                ],
+                ai: [
+                    { title: "Model Training", description: "Train ML models from scratch" },
+                    { title: "Data Processing", description: "Clean and prepare datasets" },
+                    { title: "Model Evaluation", description: "Test and optimize performance" },
+                    { title: "API Integration", description: "Deploy models as REST APIs" },
+                    { title: "Real-world Application", description: "Solve actual business problems" }
+                ],
+                data: [
+                    { title: "Data Collection", description: "Gather data from multiple sources" },
+                    { title: "Data Cleaning", description: "Handle missing values and outliers" },
+                    { title: "Analysis & Visualization", description: "Extract insights with charts" },
+                    { title: "Statistical Modeling", description: "Apply statistical techniques" },
+                    { title: "Reporting", description: "Create professional reports" }
+                ],
+                devops: [
+                    { title: "Containerization", description: "Docker containers for consistency" },
+                    { title: "Automation", description: "CI/CD pipelines for deployment" },
+                    { title: "Monitoring", description: "Track system health and performance" },
+                    { title: "Scaling", description: "Handle increased load efficiently" },
+                    { title: "Security", description: "Implement best security practices" }
+                ]
+            };
+            return features[category] || features.web;
+        }
+
+        function getLearningPath(level) {
+            const paths = {
+                Beginner: [
+                    { title: "Setup Development Environment", description: "Install tools and configure your workspace" },
+                    { title: "Learn the Basics", description: "Understand core concepts and syntax" },
+                    { title: "Build Core Features", description: "Implement main functionality step by step" },
+                    { title: "Add Styling", description: "Make it look professional" },
+                    { title: "Test & Deploy", description: "Test thoroughly and deploy to production" }
+                ],
+                Intermediate: [
+                    { title: "Project Planning", description: "Design architecture and plan features" },
+                    { title: "Backend Development", description: "Build APIs and database schema" },
+                    { title: "Frontend Development", description: "Create user interface and interactions" },
+                    { title: "Integration & Testing", description: "Connect all parts and test" },
+                    { title: "Optimization & Deployment", description: "Optimize performance and deploy" }
+                ],
+                Advanced: [
+                    { title: "System Design", description: "Design scalable architecture" },
+                    { title: "Core Implementation", description: "Build complex features and algorithms" },
+                    { title: "Performance Optimization", description: "Optimize for speed and efficiency" },
+                    { title: "Security & Testing", description: "Implement security and comprehensive testing" },
+                    { title: "Production Deployment", description: "Deploy with monitoring and CI/CD" }
+                ]
+            };
+            return paths[level] || paths.Intermediate;
+        }
+
+        function getPrerequisites(level) {
+            const prereqs = {
+                Beginner: [
+                    "Basic programming knowledge",
+                    "Familiarity with HTML/CSS (for web projects)",
+                    "Understanding of variables and functions",
+                    "Willingness to learn"
+                ],
+                Intermediate: [
+                    "Solid programming fundamentals",
+                    "Experience with at least one framework",
+                    "Understanding of databases",
+                    "Git version control basics",
+                    "API concepts"
+                ],
+                Advanced: [
+                    "Strong programming skills in multiple languages",
+                    "Experience with full-stack development",
+                    "Understanding of system design",
+                    "Database optimization knowledge",
+                    "DevOps basics",
+                    "Security best practices"
+                ]
+            };
+            return prereqs[level] || prereqs.Intermediate;
+        }
+
+        function getCategoryName(category) {
+            const names = {
+                web: "Web Development",
+                mobile: "Mobile Development",
+                ai: "AI & Machine Learning",
+                data: "Data Science",
+                devops: "DevOps"
+            };
+            return names[category] || category;
+        }
+    </script>
+</body>
+</html>
