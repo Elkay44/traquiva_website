@@ -24,8 +24,9 @@ echo "🔗 Fixing signup links..."
 find "$WEBSITE_DIR" -name "*.html" -type f -exec sed -i '' 's|href="#signup"|href="http://localhost:3000/signup"|g' {} \;
 find "$WEBSITE_DIR" -name "*.html" -type f -exec sed -i '' 's|href="/signup"|href="http://localhost:3000/signup"|g' {} \;
 
-# Projects page is now projects.html (no changes needed)
-echo "🔗 Projects page references are correct..."
+# Update all projects-improved.html references to projects.html
+echo "🔗 Updating projects page references..."
+find "$WEBSITE_DIR" -name "*.html" -type f -exec sed -i '' 's|href="projects-improved.html"|href="projects.html"|g' {} \;
 
 # Remove or comment out broken links
 echo "🗑️  Removing broken links..."

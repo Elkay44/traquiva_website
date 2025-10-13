@@ -4,69 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Build real-world projects with Traquiva. 500+ industry-standard projects across web development, mobile apps, AI/ML, and more.">
-    <title>Projects - Traquiva</title>
+    <meta name="keywords" content="coding projects, web development, mobile apps, AI projects, machine learning, portfolio projects">
+    <title>Projects - Build Real-World Applications | Traquiva</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#000000',
-                        secondary: '#111111',
-                        accent: '#333333',
-                    }
-                }
-            }
-        }
-    </script>
-    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         * { 
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
-        .gradient-bg { background: #000000; }
-        .gradient-text {
-            color: #000000;
-        }
-        nav a.active {
-            color: #000000;
-            font-weight: 400;
-        }
-        .card-hover {
+        .project-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .card-hover:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
+        .filter-btn.active {
+            background: linear-gradient(to right, #2563eb, #4f46e5);
+            color: white;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        .hidden { display: none; }
     </style>
 </head>
 <body class="bg-gray-50">
     
     <!-- Navigation -->
-    <nav class="fixed w-full top-0 z-50 bg-white shadow-md">
+    <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="flex items-center space-x-1 hover:opacity-90 transition">
-                    <div class="w-12 h-12 flex items-center justify-center">
-                        <svg class="w-9 h-9 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
-                    <span class="text-3xl font-light text-black tracking-tight">Traquiva</span>
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-2 hover:opacity-90 transition">
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    <span class="text-2xl font-semibold text-gray-900">Traquiva</span>
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="features.html" class="text-gray-700 hover:text-black transition-all font-medium">Features</a>
-                    <a href="pricing.html" class="text-gray-700 hover:text-black transition-all font-medium">Pricing</a>
-                    <a href="about.html" class="text-gray-700 hover:text-black transition-all font-medium">About</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-black transition-all font-medium">Contact</a>
-                    <a href="http://localhost:3000/login" class="text-gray-700 hover:text-black transition-all font-medium">Login</a>
-                    <a href="http://localhost:3000/signup" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg">Start Free</a>
+                    <a href="features.html" class="text-gray-700 hover:text-blue-600 transition font-medium">Features</a>
+                    <a href="pricing.html" class="text-gray-700 hover:text-blue-600 transition font-medium">Pricing</a>
+                    <a href="projects.html" class="text-blue-600 font-medium">Projects</a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-600 transition font-medium">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition font-medium">Contact</a>
+                    <a href="http://localhost:3000/login" class="text-gray-700 hover:text-blue-600 transition font-medium">Login</a>
+                    <a href="http://localhost:3000/signup" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2.5 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg font-medium">Start Free</a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
@@ -81,333 +65,111 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t shadow-lg">
             <div class="px-4 py-4 space-y-3">
-                <a href="index.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Home</a>
-                <a href="features.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Features</a>
-                <a href="pricing.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Pricing</a>
-                <a href="about.html" class="block text-gray-700 hover:text-primary py-2 transition-all">About</a>
-                <a href="contact.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Contact</a>
-                <a href="http://localhost:3000/login" class="block text-gray-700 hover:text-primary py-2 transition-all">Login</a>
-                <a href="http://localhost:3000/signup" class="block gradient-bg text-white px-6 py-3 rounded-lg text-center mt-4 shadow-lg">Start Free</a>
+                <a href="index.html" class="block text-gray-700 hover:text-blue-600 py-2 transition">Home</a>
+                <a href="features.html" class="block text-gray-700 hover:text-blue-600 py-2 transition">Features</a>
+                <a href="pricing.html" class="block text-gray-700 hover:text-blue-600 py-2 transition">Pricing</a>
+                <a href="projects.html" class="block text-blue-600 py-2 font-medium">Projects</a>
+                <a href="about.html" class="block text-gray-700 hover:text-blue-600 py-2 transition">About</a>
+                <a href="contact.html" class="block text-gray-700 hover:text-blue-600 py-2 transition">Contact</a>
+                <a href="http://localhost:3000/login" class="block text-gray-700 hover:text-blue-600 py-2 transition">Login</a>
+                <a href="http://localhost:3000/signup" class="block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg text-center mt-4 shadow-lg">Start Free</a>
             </div>
         </div>
     </nav>
     
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-        <!-- Subtle Background Pattern -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-20 left-10 w-96 h-96 bg-blue-500 blur-3xl"></div>
             <div class="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500 blur-3xl"></div>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h1 class="text-5xl md:text-6xl font-light text-white mb-8" data-aos="fade-up">
-                <span class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">500+ Real-World</span> Projects
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" data-aos="fade-up">
+                Build <span class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">Real-World</span> Projects
             </h1>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-                Build portfolio-ready applications that companies actually use. From beginner to advanced, 
-                master real-world development with hands-on projects.
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                Master coding by building 500+ industry-standard applications. From beginner to advanced, 
+                create portfolio-ready projects that companies actually use.
             </p>
             
             <!-- Stats -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                <div class="backdrop-blur-sm bg-white/5 border border-white/20 p-6 hover:bg-white/10 transition-all duration-300">
-                    <div class="text-4xl font-light bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-2">500+</div>
-                    <div class="text-gray-300 text-sm font-light">Projects</div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <div class="backdrop-blur-sm bg-white/10 border border-white/20 rounded-lg p-6 hover:bg-white/15 transition">
+                    <div class="text-3xl font-bold text-white mb-1">500+</div>
+                    <div class="text-gray-300 text-sm">Projects</div>
                 </div>
-                <div class="backdrop-blur-sm bg-white/5 border border-white/20 p-6 hover:bg-white/10 transition-all duration-300">
-                    <div class="text-4xl font-light bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-2">15+</div>
-                    <div class="text-gray-300 text-sm font-light">Tech Stacks</div>
+                <div class="backdrop-blur-sm bg-white/10 border border-white/20 rounded-lg p-6 hover:bg-white/15 transition">
+                    <div class="text-3xl font-bold text-white mb-1">15+</div>
+                    <div class="text-gray-300 text-sm">Tech Stacks</div>
                 </div>
-                <div class="backdrop-blur-sm bg-white/5 border border-white/20 p-6 hover:bg-white/10 transition-all duration-300">
-                    <div class="text-4xl font-light bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-2">100%</div>
-                    <div class="text-gray-300 text-sm font-light">Industry Standard</div>
+                <div class="backdrop-blur-sm bg-white/10 border border-white/20 rounded-lg p-6 hover:bg-white/15 transition">
+                    <div class="text-3xl font-bold text-white mb-1">100%</div>
+                    <div class="text-gray-300 text-sm">Industry Standard</div>
                 </div>
-                <div class="backdrop-blur-sm bg-white/5 border border-white/20 p-6 hover:bg-white/10 transition-all duration-300">
-                    <div class="text-4xl font-light bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-2">24/7</div>
-                    <div class="text-gray-300 text-sm font-light">AI Support</div>
+                <div class="backdrop-blur-sm bg-white/10 border border-white/20 rounded-lg p-6 hover:bg-white/15 transition">
+                    <div class="text-3xl font-bold text-white mb-1">24/7</div>
+                    <div class="text-gray-300 text-sm">AI Support</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Filter Section -->
-    <section class="py-8 bg-white border-b sticky top-20 z-40 shadow-sm">
+    <section class="py-6 bg-white border-b sticky top-16 z-40 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-wrap gap-4 justify-center">
-                <button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-light hover:from-blue-600 hover:to-indigo-700 transition-all duration-200 shadow-md">All Projects</button>
-                <button class="px-6 py-3 bg-white text-slate-700 font-light border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-200">Web Development</button>
-                <button class="px-6 py-3 bg-white text-slate-700 font-light border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-200">Mobile Apps</button>
-                <button class="px-6 py-3 bg-white text-slate-700 font-light border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-200">AI & ML</button>
-                <button class="px-6 py-3 bg-white text-slate-700 font-light border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-200">Data Science</button>
-                <button class="px-6 py-3 bg-white text-slate-700 font-light border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-200">DevOps</button>
+            <div class="flex flex-wrap gap-3 justify-center">
+                <button onclick="filterProjects('all')" class="filter-btn active px-6 py-2.5 rounded-lg font-medium transition-all duration-200" data-category="all">
+                    All Projects
+                </button>
+                <button onclick="filterProjects('web')" class="filter-btn px-6 py-2.5 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 font-medium transition-all duration-200" data-category="web">
+                    Web Development
+                </button>
+                <button onclick="filterProjects('mobile')" class="filter-btn px-6 py-2.5 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 font-medium transition-all duration-200" data-category="mobile">
+                    Mobile Apps
+                </button>
+                <button onclick="filterProjects('ai')" class="filter-btn px-6 py-2.5 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 font-medium transition-all duration-200" data-category="ai">
+                    AI & ML
+                </button>
+                <button onclick="filterProjects('data')" class="filter-btn px-6 py-2.5 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 font-medium transition-all duration-200" data-category="data">
+                    Data Science
+                </button>
+                <button onclick="filterProjects('devops')" class="filter-btn px-6 py-2.5 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 font-medium transition-all duration-200" data-category="devops">
+                    DevOps
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Projects Grid -->
-    <section class="py-20 bg-white">
+    <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projects will be dynamically rendered here -->
+            </div>
             
-            <!-- Web Development Projects -->
-            <div class="mb-16">
-                <h2 class="text-3xl font-light text-black mb-8" data-aos="fade-up">Web Development</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Project 1 -->
-                    <div class="bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg hover:border-blue-300 transition-all duration-300 group" data-aos="fade-up">
-                        <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center group-hover:from-blue-600 group-hover:to-indigo-700 transition-all duration-300">
-                            <div class="text-white text-6xl">🛒</div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-3 py-1 border border-gray-200 text-black text-xs font-light">Intermediate</span>
-                                <span class="px-3 py-1 border border-gray-200 text-black text-xs font-light">Full Stack</span>
-                            </div>
-                            <h3 class="text-xl font-light text-black mb-2">E-Commerce Platform</h3>
-                            <p class="text-gray-600 mb-4">Build a complete online store with shopping cart, payments, and admin dashboard.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 border border-gray-200 text-black text-xs">React</span>
-                                <span class="px-2 py-1 border border-gray-200 text-black text-xs">Node.js</span>
-                                <span class="px-2 py-1 border border-gray-200 text-black text-xs">MongoDB</span>
-                                <span class="px-2 py-1 border border-gray-200 text-black text-xs">Stripe</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm text-gray-500">⏱️ 40 hours</span>
-                                <button class="text-black font-light hover:text-gray-700">Start Project →</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                        <div class="h-48 bg-black flex items-center justify-center">
-                            <div class="text-white text-6xl">💬</div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Advanced</span>
-                                <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Real-time</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Chat Application</h3>
-                            <p class="text-gray-600 mb-4">Real-time messaging app with WebSocket, group chats, and file sharing.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">React</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Socket.io</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Redis</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">AWS S3</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm text-gray-500">⏱️ 35 hours</span>
-                                <button class="text-primary font-semibold hover:underline">Start Project →</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="200">
-                        <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
-                            <div class="text-white text-6xl">📊</div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Intermediate</span>
-                                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Dashboard</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Analytics Dashboard</h3>
-                            <p class="text-gray-600 mb-4">Interactive data visualization dashboard with charts, graphs, and reports.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Vue.js</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">D3.js</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Express</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">PostgreSQL</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm text-gray-500">⏱️ 30 hours</span>
-                                <button class="text-primary font-semibold hover:underline">Start Project →</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+            <!-- No Results Message -->
+            <div id="no-results" class="hidden text-center py-20">
+                <div class="text-6xl mb-4">🔍</div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">No projects found</h3>
+                <p class="text-gray-600">Try selecting a different category</p>
             </div>
-
-            <!-- Mobile Development Projects -->
-            <div class="mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-8" data-aos="fade-up">Mobile Development</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Project 4 -->
-                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up">
-                        <div class="h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                            <div class="text-white text-6xl">🍔</div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold">Intermediate</span>
-                                <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Mobile</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Food Delivery App</h3>
-                            <p class="text-gray-600 mb-4">Full-featured food ordering app with real-time tracking and payments.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">React Native</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Firebase</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Google Maps</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm text-gray-500">⏱️ 45 hours</span>
-                                <button class="text-primary font-semibold hover:underline">Start Project →</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 5 -->
-                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="100">
-                        <div class="h-48 bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center">
-                            <div class="text-white text-6xl">💪</div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-semibold">Beginner</span>
-                                <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Mobile</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Fitness Tracker</h3>
-                            <p class="text-gray-600 mb-4">Track workouts, calories, and progress with charts and reminders.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Flutter</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">SQLite</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Charts</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm text-gray-500">⏱️ 25 hours</span>
-                                <button class="text-primary font-semibold hover:underline">Start Project →</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 6 -->
-                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="200">
-                        <div class="h-48 bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center">
-                            <div class="text-white text-6xl">📱</div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-semibold">Advanced</span>
-                                <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Social</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Social Media App</h3>
-                            <p class="text-gray-600 mb-4">Instagram-like app with posts, stories, comments, and likes.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Swift</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Firebase</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Cloud Storage</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm text-gray-500">⏱️ 50 hours</span>
-                                <button class="text-primary font-semibold hover:underline">Start Project →</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- AI & ML Projects -->
-            <div class="mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-8" data-aos="fade-up">AI & Machine Learning</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Project 7 -->
-                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up">
-                        <div class="h-48 bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center">
-                            <div class="text-white text-6xl">🤖</div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Advanced</span>
-                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">AI</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Chatbot with NLP</h3>
-                            <p class="text-gray-600 mb-4">Build an intelligent chatbot using natural language processing.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Python</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">TensorFlow</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">NLTK</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm text-gray-500">⏱️ 35 hours</span>
-                                <button class="text-primary font-semibold hover:underline">Start Project →</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 8 -->
-                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="100">
-                        <div class="h-48 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
-                            <div class="text-white text-6xl">📸</div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-xs font-semibold">Intermediate</span>
-                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Computer Vision</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Image Recognition</h3>
-                            <p class="text-gray-600 mb-4">Train a model to classify and detect objects in images.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Python</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">PyTorch</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">OpenCV</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm text-gray-500">⏱️ 30 hours</span>
-                                <button class="text-primary font-semibold hover:underline">Start Project →</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 9 -->
-                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="200">
-                        <div class="h-48 bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center">
-                            <div class="text-white text-6xl">🎯</div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-3 py-1 bg-violet-100 text-violet-700 rounded-full text-xs font-semibold">Advanced</span>
-                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">ML</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Recommendation System</h3>
-                            <p class="text-gray-600 mb-4">Build a Netflix-style recommendation engine with collaborative filtering.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Python</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Scikit-learn</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Pandas</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm text-gray-500">⏱️ 40 hours</span>
-                                <button class="text-primary font-semibold hover:underline">Start Project →</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 gradient-bg">
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-indigo-600">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
                 Ready to Build Your Portfolio?
             </h2>
-            <p class="text-xl text-gray-100 mb-8">
+            <p class="text-xl text-blue-100 mb-8">
                 Start with beginner projects and work your way up to advanced applications.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="http://localhost:3000/signup" class="bg-white text-black px-8 py-4 rounded-md font-normal text-lg hover:bg-gray-100 transition">
+                <a href="http://localhost:3000/signup" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition shadow-lg">
                     Start Building Free
                 </a>
-                <a href="pricing.html" class="border border-white text-white px-8 py-4 rounded-md font-normal text-lg hover:bg-white/20 transition">
+                <a href="pricing.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/10 transition">
                     View Pricing
                 </a>
             </div>
@@ -420,19 +182,19 @@
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
-                            <span class="text-white font-bold">T</span>
-                        </div>
+                        <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
                         <span class="text-xl font-bold text-white">Traquiva</span>
                     </div>
-                    <p class="text-sm text-gray-400">Master tech skills with AI-powered learning. From zero to industry-ready.</p>
+                    <p class="text-sm">Master tech skills with AI-powered learning. From zero to industry-ready.</p>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-4">Product</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="features.html" class="hover:text-white transition">Features</a></li>
                         <li><a href="pricing.html" class="hover:text-white transition">Pricing</a></li>
-                        <li><a href="projects-improved.html" class="hover:text-white transition">Projects</a></li>
+                        <li><a href="projects.html" class="hover:text-white transition">Projects</a></li>
                         <li><a href="mentors.html" class="hover:text-white transition">Mentors</a></li>
                     </ul>
                 </div>
@@ -450,12 +212,11 @@
                     <ul class="space-y-2 text-sm">
                         <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
                         <li><a href="terms.html" class="hover:text-white transition">Terms of Service</a></li>
-                        <li><a href="privacy.html#cookies" class="hover:text-white transition">Cookie Policy</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-sm text-gray-400">© 2025 Traquiva. All rights reserved.</p>
+                <p class="text-sm">© 2025 Traquiva. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -464,10 +225,220 @@
     <script>
         AOS.init({ duration: 800, once: true, offset: 100 });
         
+        // Project Data
+        const projects = [
+            {
+                id: 1,
+                title: "E-Commerce Platform",
+                category: "web",
+                level: "Intermediate",
+                type: "Full Stack",
+                description: "Build a complete online store with shopping cart, payments, and admin dashboard.",
+                icon: "🛒",
+                gradient: "from-blue-500 to-indigo-600",
+                hours: 40,
+                tech: ["React", "Node.js", "MongoDB", "Stripe"]
+            },
+            {
+                id: 2,
+                title: "Real-Time Chat App",
+                category: "web",
+                level: "Advanced",
+                type: "Real-time",
+                description: "Real-time messaging app with WebSocket, group chats, and file sharing.",
+                icon: "💬",
+                gradient: "from-purple-500 to-pink-600",
+                hours: 35,
+                tech: ["React", "Socket.io", "Redis", "AWS S3"]
+            },
+            {
+                id: 3,
+                title: "Analytics Dashboard",
+                category: "web",
+                level: "Intermediate",
+                type: "Dashboard",
+                description: "Interactive data visualization dashboard with charts, graphs, and reports.",
+                icon: "📊",
+                gradient: "from-green-500 to-teal-600",
+                hours: 30,
+                tech: ["Vue.js", "D3.js", "Express", "PostgreSQL"]
+            },
+            {
+                id: 4,
+                title: "Food Delivery App",
+                category: "mobile",
+                level: "Intermediate",
+                type: "Mobile",
+                description: "Full-featured food ordering app with real-time tracking and payments.",
+                icon: "🍔",
+                gradient: "from-orange-500 to-red-600",
+                hours: 45,
+                tech: ["React Native", "Firebase", "Google Maps"]
+            },
+            {
+                id: 5,
+                title: "Fitness Tracker",
+                category: "mobile",
+                level: "Beginner",
+                type: "Mobile",
+                description: "Track workouts, calories, and progress with charts and reminders.",
+                icon: "💪",
+                gradient: "from-pink-500 to-rose-600",
+                hours: 25,
+                tech: ["Flutter", "SQLite", "Charts"]
+            },
+            {
+                id: 6,
+                title: "Social Media App",
+                category: "mobile",
+                level: "Advanced",
+                type: "Social",
+                description: "Instagram-like app with posts, stories, comments, and likes.",
+                icon: "📱",
+                gradient: "from-indigo-500 to-blue-600",
+                hours: 50,
+                tech: ["Swift", "Firebase", "Cloud Storage"]
+            },
+            {
+                id: 7,
+                title: "AI Chatbot with NLP",
+                category: "ai",
+                level: "Advanced",
+                type: "AI",
+                description: "Build an intelligent chatbot using natural language processing.",
+                icon: "🤖",
+                gradient: "from-yellow-500 to-orange-600",
+                hours: 35,
+                tech: ["Python", "TensorFlow", "NLTK"]
+            },
+            {
+                id: 8,
+                title: "Image Recognition",
+                category: "ai",
+                level: "Intermediate",
+                type: "Computer Vision",
+                description: "Train a model to classify and detect objects in images.",
+                icon: "📸",
+                gradient: "from-cyan-500 to-blue-600",
+                hours: 30,
+                tech: ["Python", "PyTorch", "OpenCV"]
+            },
+            {
+                id: 9,
+                title: "Recommendation System",
+                category: "ai",
+                level: "Advanced",
+                type: "ML",
+                description: "Build a Netflix-style recommendation engine with collaborative filtering.",
+                icon: "🎯",
+                gradient: "from-violet-500 to-purple-600",
+                hours: 40,
+                tech: ["Python", "Scikit-learn", "Pandas"]
+            },
+            {
+                id: 10,
+                title: "Data Analysis Pipeline",
+                category: "data",
+                level: "Intermediate",
+                type: "Data Engineering",
+                description: "Build ETL pipelines for processing and analyzing large datasets.",
+                icon: "📈",
+                gradient: "from-blue-500 to-cyan-600",
+                hours: 35,
+                tech: ["Python", "Pandas", "Apache Spark"]
+            },
+            {
+                id: 11,
+                title: "CI/CD Pipeline",
+                category: "devops",
+                level: "Advanced",
+                type: "DevOps",
+                description: "Automated deployment pipeline with Docker, Jenkins, and Kubernetes.",
+                icon: "🚀",
+                gradient: "from-gray-700 to-gray-900",
+                hours: 30,
+                tech: ["Docker", "Jenkins", "Kubernetes", "AWS"]
+            },
+            {
+                id: 12,
+                title: "Monitoring Dashboard",
+                category: "devops",
+                level: "Intermediate",
+                type: "Infrastructure",
+                description: "Real-time system monitoring with Prometheus and Grafana.",
+                icon: "📡",
+                gradient: "from-red-500 to-orange-600",
+                hours: 25,
+                tech: ["Prometheus", "Grafana", "Docker"]
+            }
+        ];
+
+        // Render projects
+        function renderProjects(filteredProjects) {
+            const container = document.getElementById('projects-container');
+            const noResults = document.getElementById('no-results');
+            
+            if (filteredProjects.length === 0) {
+                container.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+            
+            noResults.classList.add('hidden');
+            container.innerHTML = filteredProjects.map(project => `
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md border border-gray-200" data-aos="fade-up" data-category="${project.category}">
+                    <div class="h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center">
+                        <div class="text-white text-6xl">${project.icon}</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">${project.level}</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold">${project.type}</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">${project.title}</h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">${project.description}</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            ${project.tech.map(t => `<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">${t}</span>`).join('')}
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">⏱️ ${project.hours} hours</span>
+                            <a href="project-detail.html?id=${project.id}" class="text-blue-600 font-semibold hover:text-blue-700 transition">
+                                View Details →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter projects
+        function filterProjects(category) {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.add('bg-gray-100', 'text-gray-700');
+            });
+            event.target.classList.add('active');
+            event.target.classList.remove('bg-gray-100', 'text-gray-700');
+            
+            // Filter and render
+            const filtered = category === 'all' 
+                ? projects 
+                : projects.filter(p => p.category === category);
+            renderProjects(filtered);
+        }
+
+        // Mobile menu toggle
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
+
+        // Initial render
+        renderProjects(projects);
+        
+        // Store projects data for detail page
+        localStorage.setItem('traquiva_projects', JSON.stringify(projects));
     </script>
 </body>
 </html>
