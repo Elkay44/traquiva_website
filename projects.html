@@ -12,10 +12,24 @@
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        /* Prevent horizontal scroll and white space */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
         * { 
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
+        
+        /* Ensure all sections stay within viewport */
+        section, div {
+            max-width: 100%;
+        }
+        
         .project-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
