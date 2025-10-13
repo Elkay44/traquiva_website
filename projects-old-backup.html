@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Build real-world projects with Traquiva. 500+ industry-standard projects across web development, mobile apps, AI/ML, and more.">
+    <title>Projects - Traquiva</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        secondary: '#111111',
+                        accent: '#333333',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        * { 
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-bg { background: #000000; }
+        .gradient-text {
+            color: #000000;
+        }
+        nav a.active {
+            color: #000000;
+            font-weight: 400;
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-1 hover:opacity-90 transition">
+                    <div class="w-12 h-12 flex items-center justify-center">
+                        <svg class="w-9 h-9 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-3xl font-light text-black tracking-tight">Traquiva</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="features.html" class="text-gray-700 hover:text-black transition-all font-medium">Features</a>
+                    <a href="pricing.html" class="text-gray-700 hover:text-black transition-all font-medium">Pricing</a>
+                    <a href="about.html" class="text-gray-700 hover:text-black transition-all font-medium">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-black transition-all font-medium">Contact</a>
+                    <a href="http://localhost:3000/login" class="text-gray-700 hover:text-black transition-all font-medium">Login</a>
+                    <a href="http://localhost:3000/signup" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg">Start Free</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t shadow-lg">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Home</a>
+                <a href="features.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Features</a>
+                <a href="pricing.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Pricing</a>
+                <a href="about.html" class="block text-gray-700 hover:text-primary py-2 transition-all">About</a>
+                <a href="contact.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Contact</a>
+                <a href="http://localhost:3000/login" class="block text-gray-700 hover:text-primary py-2 transition-all">Login</a>
+                <a href="http://localhost:3000/signup" class="block gradient-bg text-white px-6 py-3 rounded-lg text-center mt-4 shadow-lg">Start Free</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        <!-- Subtle Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-96 h-96 bg-blue-500 blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500 blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-5xl md:text-6xl font-light text-white mb-8" data-aos="fade-up">
+                <span class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">500+ Real-World</span> Projects
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                Build portfolio-ready applications that companies actually use. From beginner to advanced, 
+                master real-world development with hands-on projects.
+            </p>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <div class="backdrop-blur-sm bg-white/5 border border-white/20 p-6 hover:bg-white/10 transition-all duration-300">
+                    <div class="text-4xl font-light bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-2">500+</div>
+                    <div class="text-gray-300 text-sm font-light">Projects</div>
+                </div>
+                <div class="backdrop-blur-sm bg-white/5 border border-white/20 p-6 hover:bg-white/10 transition-all duration-300">
+                    <div class="text-4xl font-light bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-2">15+</div>
+                    <div class="text-gray-300 text-sm font-light">Tech Stacks</div>
+                </div>
+                <div class="backdrop-blur-sm bg-white/5 border border-white/20 p-6 hover:bg-white/10 transition-all duration-300">
+                    <div class="text-4xl font-light bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-2">100%</div>
+                    <div class="text-gray-300 text-sm font-light">Industry Standard</div>
+                </div>
+                <div class="backdrop-blur-sm bg-white/5 border border-white/20 p-6 hover:bg-white/10 transition-all duration-300">
+                    <div class="text-4xl font-light bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-2">24/7</div>
+                    <div class="text-gray-300 text-sm font-light">AI Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-8 bg-white border-b sticky top-20 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap gap-4 justify-center">
+                <button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-light hover:from-blue-600 hover:to-indigo-700 transition-all duration-200 shadow-md">All Projects</button>
+                <button class="px-6 py-3 bg-white text-slate-700 font-light border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-200">Web Development</button>
+                <button class="px-6 py-3 bg-white text-slate-700 font-light border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-200">Mobile Apps</button>
+                <button class="px-6 py-3 bg-white text-slate-700 font-light border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-200">AI & ML</button>
+                <button class="px-6 py-3 bg-white text-slate-700 font-light border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-200">Data Science</button>
+                <button class="px-6 py-3 bg-white text-slate-700 font-light border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-200">DevOps</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Web Development Projects -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-light text-black mb-8" data-aos="fade-up">Web Development</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Project 1 -->
+                    <div class="bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg hover:border-blue-300 transition-all duration-300 group" data-aos="fade-up">
+                        <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center group-hover:from-blue-600 group-hover:to-indigo-700 transition-all duration-300">
+                            <div class="text-white text-6xl">🛒</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-3 py-1 border border-gray-200 text-black text-xs font-light">Intermediate</span>
+                                <span class="px-3 py-1 border border-gray-200 text-black text-xs font-light">Full Stack</span>
+                            </div>
+                            <h3 class="text-xl font-light text-black mb-2">E-Commerce Platform</h3>
+                            <p class="text-gray-600 mb-4">Build a complete online store with shopping cart, payments, and admin dashboard.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 border border-gray-200 text-black text-xs">React</span>
+                                <span class="px-2 py-1 border border-gray-200 text-black text-xs">Node.js</span>
+                                <span class="px-2 py-1 border border-gray-200 text-black text-xs">MongoDB</span>
+                                <span class="px-2 py-1 border border-gray-200 text-black text-xs">Stripe</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">⏱️ 40 hours</span>
+                                <button class="text-black font-light hover:text-gray-700">Start Project →</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-white border border-gray-100 overflow-hidden shadow-sm hover:shadow transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-48 bg-black flex items-center justify-center">
+                            <div class="text-white text-6xl">💬</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Advanced</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Real-time</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Chat Application</h3>
+                            <p class="text-gray-600 mb-4">Real-time messaging app with WebSocket, group chats, and file sharing.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">React</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Socket.io</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Redis</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">AWS S3</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">⏱️ 35 hours</span>
+                                <button class="text-primary font-semibold hover:underline">Start Project →</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
+                            <div class="text-white text-6xl">📊</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Intermediate</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Dashboard</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Analytics Dashboard</h3>
+                            <p class="text-gray-600 mb-4">Interactive data visualization dashboard with charts, graphs, and reports.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Vue.js</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">D3.js</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Express</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">PostgreSQL</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">⏱️ 30 hours</span>
+                                <button class="text-primary font-semibold hover:underline">Start Project →</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Mobile Development Projects -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8" data-aos="fade-up">Mobile Development</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Project 4 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up">
+                        <div class="h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                            <div class="text-white text-6xl">🍔</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold">Intermediate</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Mobile</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Food Delivery App</h3>
+                            <p class="text-gray-600 mb-4">Full-featured food ordering app with real-time tracking and payments.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">React Native</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Firebase</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Google Maps</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">⏱️ 45 hours</span>
+                                <button class="text-primary font-semibold hover:underline">Start Project →</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-48 bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center">
+                            <div class="text-white text-6xl">💪</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-semibold">Beginner</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Mobile</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Fitness Tracker</h3>
+                            <p class="text-gray-600 mb-4">Track workouts, calories, and progress with charts and reminders.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Flutter</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">SQLite</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Charts</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">⏱️ 25 hours</span>
+                                <button class="text-primary font-semibold hover:underline">Start Project →</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-48 bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center">
+                            <div class="text-white text-6xl">📱</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-semibold">Advanced</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Social</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Social Media App</h3>
+                            <p class="text-gray-600 mb-4">Instagram-like app with posts, stories, comments, and likes.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Swift</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Firebase</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Cloud Storage</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">⏱️ 50 hours</span>
+                                <button class="text-primary font-semibold hover:underline">Start Project →</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- AI & ML Projects -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8" data-aos="fade-up">AI & Machine Learning</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Project 7 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up">
+                        <div class="h-48 bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center">
+                            <div class="text-white text-6xl">🤖</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Advanced</span>
+                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">AI</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Chatbot with NLP</h3>
+                            <p class="text-gray-600 mb-4">Build an intelligent chatbot using natural language processing.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Python</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">TensorFlow</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">NLTK</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">⏱️ 35 hours</span>
+                                <button class="text-primary font-semibold hover:underline">Start Project →</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 8 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-48 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+                            <div class="text-white text-6xl">📸</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-xs font-semibold">Intermediate</span>
+                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Computer Vision</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Image Recognition</h3>
+                            <p class="text-gray-600 mb-4">Train a model to classify and detect objects in images.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Python</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">PyTorch</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">OpenCV</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">⏱️ 30 hours</span>
+                                <button class="text-primary font-semibold hover:underline">Start Project →</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 9 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-48 bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center">
+                            <div class="text-white text-6xl">🎯</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-3 py-1 bg-violet-100 text-violet-700 rounded-full text-xs font-semibold">Advanced</span>
+                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">ML</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Recommendation System</h3>
+                            <p class="text-gray-600 mb-4">Build a Netflix-style recommendation engine with collaborative filtering.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Python</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Scikit-learn</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Pandas</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">⏱️ 40 hours</span>
+                                <button class="text-primary font-semibold hover:underline">Start Project →</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Build Your Portfolio?
+            </h2>
+            <p class="text-xl text-gray-100 mb-8">
+                Start with beginner projects and work your way up to advanced applications.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="http://localhost:3000/signup" class="bg-white text-black px-8 py-4 rounded-md font-normal text-lg hover:bg-gray-100 transition">
+                    Start Building Free
+                </a>
+                <a href="pricing.html" class="border border-white text-white px-8 py-4 rounded-md font-normal text-lg hover:bg-white/20 transition">
+                    View Pricing
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">T</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">Traquiva</span>
+                    </div>
+                    <p class="text-sm text-gray-400">Master tech skills with AI-powered learning. From zero to industry-ready.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="features.html" class="hover:text-white transition">Features</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="projects-improved.html" class="hover:text-white transition">Projects</a></li>
+                        <li><a href="mentors.html" class="hover:text-white transition">Mentors</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition">About</a></li>
+                        <li><a href="success.html" class="hover:text-white transition">Success Stories</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="privacy.html#cookies" class="hover:text-white transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-sm text-gray-400">© 2025 Traquiva. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100 });
+        
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
