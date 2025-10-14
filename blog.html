@@ -60,6 +60,12 @@
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
         }
+        .filter-btn.active {
+            background: linear-gradient(to right, #2563eb, #4f46e5);
+            color: white;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        .hidden { display: none; }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -125,14 +131,14 @@
     </section>
 
     <!-- Categories -->
-    <section class="py-8 bg-white border-b sticky top-16 z-40">
+    <section class="py-6 bg-white border-b sticky top-16 z-40 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap gap-3 justify-center">
-                <button class="px-6 py-2 bg-primary text-white rounded-lg font-semibold hover:opacity-90 transition">All Posts</button>
-                <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition">Tutorials</button>
-                <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition">Career Advice</button>
-                <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition">Industry Trends</button>
-                <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition">Success Stories</button>
+                <button onclick="filterBlogs('all')" class="filter-btn active px-6 py-2.5 rounded-lg font-medium transition-all duration-200" data-category="all">All Posts</button>
+                <button onclick="filterBlogs('tutorials')" class="filter-btn px-6 py-2.5 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 font-medium transition-all duration-200" data-category="tutorials">Tutorials</button>
+                <button onclick="filterBlogs('career')" class="filter-btn px-6 py-2.5 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 font-medium transition-all duration-200" data-category="career">Career Advice</button>
+                <button onclick="filterBlogs('trends')" class="filter-btn px-6 py-2.5 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 font-medium transition-all duration-200" data-category="trends">Industry Trends</button>
+                <button onclick="filterBlogs('success')" class="filter-btn px-6 py-2.5 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 font-medium transition-all duration-200" data-category="success">Success Stories</button>
             </div>
         </div>
     </section>
@@ -163,7 +169,7 @@
                                 <div class="text-sm text-gray-500">Career Coach • 5 min read</div>
                             </div>
                         </div>
-                        <button class="text-primary font-bold text-lg hover:underline">Read More →</button>
+                        <a href="blog-detail.html?id=featured" class="text-primary font-bold text-lg hover:underline">Read More →</a>
                     </div>
                 </div>
             </div>
@@ -175,122 +181,15 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-gray-900 mb-8" data-aos="fade-up">Latest Posts</h2>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Blog Post 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up">
-                    <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center">
-                        <div class="text-white text-6xl">💻</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Tutorial</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Building Your First React App: A Beginner's Guide</h3>
-                        <p class="text-gray-600 mb-4">Learn React fundamentals by building a real-world todo application from scratch.</p>
-                        <div class="flex items-center gap-3 mb-4">
-                            <img src="https://i.pravatar.cc/150?img=33" alt="Author" class="w-8 h-8 rounded-full">
-                            <div class="text-sm text-gray-500">Alex Kumar • 8 min read</div>
-                        </div>
-                        <button class="text-primary font-semibold hover:underline">Read More →</button>
-                    </div>
-                </div>
+            <div id="blogs-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog posts will be dynamically rendered here -->
+            </div>
 
-                <!-- Blog Post 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
-                        <div class="text-white text-6xl">📈</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Career</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">5 Skills Every Developer Needs in 2025</h3>
-                        <p class="text-gray-600 mb-4">Stay ahead of the curve with these essential skills that employers are looking for.</p>
-                        <div class="flex items-center gap-3 mb-4">
-                            <img src="https://i.pravatar.cc/150?img=27" alt="Author" class="w-8 h-8 rounded-full">
-                            <div class="text-sm text-gray-500">Maria Garcia • 6 min read</div>
-                        </div>
-                        <button class="text-primary font-semibold hover:underline">Read More →</button>
-                    </div>
-                </div>
-
-                <!-- Blog Post 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center">
-                        <div class="text-white text-6xl">🤖</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">AI/ML</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Introduction to Machine Learning with Python</h3>
-                        <p class="text-gray-600 mb-4">Get started with ML using Python, scikit-learn, and real-world datasets.</p>
-                        <div class="flex items-center gap-3 mb-4">
-                            <img src="https://i.pravatar.cc/150?img=52" alt="Author" class="w-8 h-8 rounded-full">
-                            <div class="text-sm text-gray-500">David Park • 12 min read</div>
-                        </div>
-                        <button class="text-primary font-semibold hover:underline">Read More →</button>
-                    </div>
-                </div>
-
-                <!-- Blog Post 4 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up">
-                    <div class="h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                        <div class="text-white text-6xl">🎯</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold">Interview</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Cracking the Coding Interview: Top 10 Tips</h3>
-                        <p class="text-gray-600 mb-4">Master technical interviews with these proven strategies from industry experts.</p>
-                        <div class="flex items-center gap-3 mb-4">
-                            <img src="https://i.pravatar.cc/150?img=44" alt="Author" class="w-8 h-8 rounded-full">
-                            <div class="text-sm text-gray-500">Lisa Chen • 10 min read</div>
-                        </div>
-                        <button class="text-primary font-semibold hover:underline">Read More →</button>
-                    </div>
-                </div>
-
-                <!-- Blog Post 5 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center">
-                        <div class="text-white text-6xl">✨</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-semibold">Success Story</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">From Teacher to Tech: My Journey to Google</h3>
-                        <p class="text-gray-600 mb-4">How I transitioned careers and landed my dream job at Google in 6 months.</p>
-                        <div class="flex items-center gap-3 mb-4">
-                            <img src="https://i.pravatar.cc/150?img=20" alt="Author" class="w-8 h-8 rounded-full">
-                            <div class="text-sm text-gray-500">Sarah Johnson • 7 min read</div>
-                        </div>
-                        <button class="text-primary font-semibold hover:underline">Read More →</button>
-                    </div>
-                </div>
-
-                <!-- Blog Post 6 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center">
-                        <div class="text-white text-6xl">🔧</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-semibold">DevOps</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Docker and Kubernetes: A Complete Guide</h3>
-                        <p class="text-gray-600 mb-4">Learn containerization and orchestration for modern application deployment.</p>
-                        <div class="flex items-center gap-3 mb-4">
-                            <img src="https://i.pravatar.cc/150?img=12" alt="Author" class="w-8 h-8 rounded-full">
-                            <div class="text-sm text-gray-500">James Wilson • 15 min read</div>
-                        </div>
-                        <button class="text-primary font-semibold hover:underline">Read More →</button>
-                    </div>
-                </div>
-
+            <!-- No Results Message -->
+            <div id="no-results" class="hidden text-center py-20">
+                <div class="text-6xl mb-4">🔍</div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">No posts found</h3>
+                <p class="text-gray-600">Try selecting a different category</p>
             </div>
 
             <!-- Load More -->
@@ -369,10 +268,238 @@
     <script>
         AOS.init({ duration: 800, once: true, offset: 100 });
         
+        // Blog Data
+        const blogs = [
+            {
+                id: 1,
+                title: "Building Your First React App: A Beginner's Guide",
+                category: "tutorials",
+                categoryLabel: "Tutorial",
+                excerpt: "Learn React fundamentals by building a real-world todo application from scratch.",
+                author: "Alex Kumar",
+                authorImg: "https://i.pravatar.cc/150?img=33",
+                readTime: "8 min read",
+                icon: "💻",
+                gradient: "from-blue-500 to-cyan-600",
+                badgeColor: "bg-blue-100 text-blue-700",
+                content: "Full article content here..."
+            },
+            {
+                id: 2,
+                title: "5 Skills Every Developer Needs in 2025",
+                category: "career",
+                categoryLabel: "Career",
+                excerpt: "Stay ahead of the curve with these essential skills that employers are looking for.",
+                author: "Maria Garcia",
+                authorImg: "https://i.pravatar.cc/150?img=27",
+                readTime: "6 min read",
+                icon: "📈",
+                gradient: "from-green-500 to-emerald-600",
+                badgeColor: "bg-green-100 text-green-700",
+                content: "Full article content here..."
+            },
+            {
+                id: 3,
+                title: "Introduction to Machine Learning with Python",
+                category: "tutorials",
+                categoryLabel: "AI/ML",
+                excerpt: "Get started with ML using Python, scikit-learn, and real-world datasets.",
+                author: "David Park",
+                authorImg: "https://i.pravatar.cc/150?img=52",
+                readTime: "12 min read",
+                icon: "🤖",
+                gradient: "from-purple-500 to-violet-600",
+                badgeColor: "bg-purple-100 text-purple-700",
+                content: "Full article content here..."
+            },
+            {
+                id: 4,
+                title: "Cracking the Coding Interview: Top 10 Tips",
+                category: "career",
+                categoryLabel: "Interview",
+                excerpt: "Master technical interviews with these proven strategies from industry experts.",
+                author: "Lisa Chen",
+                authorImg: "https://i.pravatar.cc/150?img=44",
+                readTime: "10 min read",
+                icon: "🎯",
+                gradient: "from-orange-500 to-red-600",
+                badgeColor: "bg-orange-100 text-orange-700",
+                content: "Full article content here..."
+            },
+            {
+                id: 5,
+                title: "From Teacher to Tech: My Journey to Google",
+                category: "success",
+                categoryLabel: "Success Story",
+                excerpt: "How I transitioned careers and landed my dream job at Google in 6 months.",
+                author: "Sarah Johnson",
+                authorImg: "https://i.pravatar.cc/150?img=20",
+                readTime: "7 min read",
+                icon: "✨",
+                gradient: "from-pink-500 to-rose-600",
+                badgeColor: "bg-pink-100 text-pink-700",
+                content: "Full article content here..."
+            },
+            {
+                id: 6,
+                title: "Docker and Kubernetes: A Complete Guide",
+                category: "tutorials",
+                categoryLabel: "DevOps",
+                excerpt: "Learn containerization and orchestration for modern application deployment.",
+                author: "James Wilson",
+                authorImg: "https://i.pravatar.cc/150?img=12",
+                readTime: "15 min read",
+                icon: "🔧",
+                gradient: "from-indigo-500 to-blue-600",
+                badgeColor: "bg-indigo-100 text-indigo-700",
+                content: "Full article content here..."
+            },
+            {
+                id: 7,
+                title: "The Future of Web Development in 2025",
+                category: "trends",
+                categoryLabel: "Industry Trends",
+                excerpt: "Explore emerging technologies and trends shaping the future of web development.",
+                author: "Emma Davis",
+                authorImg: "https://i.pravatar.cc/150?img=45",
+                readTime: "9 min read",
+                icon: "🚀",
+                gradient: "from-cyan-500 to-blue-600",
+                badgeColor: "bg-cyan-100 text-cyan-700",
+                content: "Full article content here..."
+            },
+            {
+                id: 8,
+                title: "Mastering Git and GitHub Workflows",
+                category: "tutorials",
+                categoryLabel: "Tutorial",
+                excerpt: "Learn professional Git workflows, branching strategies, and collaboration best practices.",
+                author: "Michael Brown",
+                authorImg: "https://i.pravatar.cc/150?img=68",
+                readTime: "11 min read",
+                icon: "🌿",
+                gradient: "from-emerald-500 to-green-600",
+                badgeColor: "bg-emerald-100 text-emerald-700",
+                content: "Full article content here..."
+            },
+            {
+                id: 9,
+                title: "Negotiating Your First Tech Salary",
+                category: "career",
+                categoryLabel: "Career",
+                excerpt: "Expert tips on salary negotiation, benefits, and getting the compensation you deserve.",
+                author: "Rachel Kim",
+                authorImg: "https://i.pravatar.cc/150?img=38",
+                readTime: "8 min read",
+                icon: "💰",
+                gradient: "from-yellow-500 to-orange-600",
+                badgeColor: "bg-yellow-100 text-yellow-700",
+                content: "Full article content here..."
+            },
+            {
+                id: 10,
+                title: "AI and the Future of Software Development",
+                category: "trends",
+                categoryLabel: "Industry Trends",
+                excerpt: "How artificial intelligence is transforming the way we write and deploy code.",
+                author: "Dr. Alan Chen",
+                authorImg: "https://i.pravatar.cc/150?img=56",
+                readTime: "13 min read",
+                icon: "🧠",
+                gradient: "from-violet-500 to-purple-600",
+                badgeColor: "bg-violet-100 text-violet-700",
+                content: "Full article content here..."
+            },
+            {
+                id: 11,
+                title: "From Bootcamp to Senior Developer in 3 Years",
+                category: "success",
+                categoryLabel: "Success Story",
+                excerpt: "My journey from coding bootcamp graduate to senior developer at a Fortune 500 company.",
+                author: "Marcus Thompson",
+                authorImg: "https://i.pravatar.cc/150?img=14",
+                readTime: "10 min read",
+                icon: "🎓",
+                gradient: "from-rose-500 to-pink-600",
+                badgeColor: "bg-rose-100 text-rose-700",
+                content: "Full article content here..."
+            },
+            {
+                id: 12,
+                title: "Building Scalable APIs with Node.js",
+                category: "tutorials",
+                categoryLabel: "Tutorial",
+                excerpt: "Design and implement RESTful APIs that can handle millions of requests.",
+                author: "Sophie Anderson",
+                authorImg: "https://i.pravatar.cc/150?img=25",
+                readTime: "14 min read",
+                icon: "⚡",
+                gradient: "from-amber-500 to-orange-600",
+                badgeColor: "bg-amber-100 text-amber-700",
+                content: "Full article content here..."
+            }
+        ];
+
+        // Render blogs
+        function renderBlogs(filteredBlogs) {
+            const container = document.getElementById('blogs-container');
+            const noResults = document.getElementById('no-results');
+            
+            if (filteredBlogs.length === 0) {
+                container.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+            
+            noResults.classList.add('hidden');
+            container.innerHTML = filteredBlogs.map(blog => `
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-category="${blog.category}">
+                    <div class="h-48 bg-gradient-to-br ${blog.gradient} flex items-center justify-center">
+                        <div class="text-white text-6xl">${blog.icon}</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-3 py-1 ${blog.badgeColor} rounded-full text-xs font-semibold">${blog.categoryLabel}</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">${blog.title}</h3>
+                        <p class="text-gray-600 mb-4">${blog.excerpt}</p>
+                        <div class="flex items-center gap-3 mb-4">
+                            <img src="${blog.authorImg}" alt="${blog.author}" class="w-8 h-8 rounded-full">
+                            <div class="text-sm text-gray-500">${blog.author} • ${blog.readTime}</div>
+                        </div>
+                        <a href="blog-detail.html?id=${blog.id}" class="text-primary font-semibold hover:underline">Read More →</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter blogs
+        function filterBlogs(category) {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.add('bg-gray-100', 'text-gray-700');
+            });
+            event.target.classList.add('active');
+            event.target.classList.remove('bg-gray-100', 'text-gray-700');
+            
+            // Filter and render
+            const filtered = category === 'all' 
+                ? blogs 
+                : blogs.filter(b => b.category === category);
+            renderBlogs(filtered);
+        }
+
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
+
+        // Initial render
+        renderBlogs(blogs);
+        
+        // Store blogs data for detail page
+        localStorage.setItem('traquiva_blogs', JSON.stringify(blogs));
     </script>
 </body>
 </html>

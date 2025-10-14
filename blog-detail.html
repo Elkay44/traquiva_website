@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read the full blog post on Traquiva">
+    <title id="page-title">Blog Post - Traquiva</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#667eea',
+                        secondary: '#764ba2',
+                        accent: '#f093fb',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        * { 
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        section, div {
+            max-width: 100%;
+        }
+        
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .article-content {
+            line-height: 1.8;
+        }
+        
+        .article-content h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #374151;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.25rem;
+            color: #4b5563;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+        }
+        
+        .article-content code {
+            background: #f3f4f6;
+            padding: 0.125rem 0.375rem;
+            border-radius: 0.25rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+        }
+        
+        .article-content pre {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin-bottom: 1.25rem;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid #667eea;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-1 hover:opacity-90 transition">
+                    <div class="w-12 h-12 flex items-center justify-center">
+                        <svg class="w-9 h-9 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-3xl font-light text-black tracking-tight">Traquiva</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="features.html" class="text-gray-700 hover:text-black transition-all font-medium">Features</a>
+                    <a href="pricing.html" class="text-gray-700 hover:text-black transition-all font-medium">Pricing</a>
+                    <a href="about.html" class="text-gray-700 hover:text-black transition-all font-medium">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-black transition-all font-medium">Contact</a>
+                    <a href="http://localhost:3000/login" class="text-gray-700 hover:text-black transition-all font-medium">Login</a>
+                    <a href="http://localhost:3000/register" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg">Start Free</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t shadow-lg">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Home</a>
+                <a href="features.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Features</a>
+                <a href="pricing.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Pricing</a>
+                <a href="about.html" class="block text-gray-700 hover:text-primary py-2 transition-all">About</a>
+                <a href="contact.html" class="block text-gray-700 hover:text-primary py-2 transition-all">Contact</a>
+                <a href="http://localhost:3000/login" class="block text-gray-700 hover:text-primary py-2 transition-all">Login</a>
+                <a href="http://localhost:3000/register" class="block gradient-bg text-white px-6 py-3 rounded-lg text-center mt-4 shadow-lg">Start Free</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back to Blog -->
+    <div class="pt-24 pb-6 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <a href="blog.html" class="inline-flex items-center text-primary hover:underline font-medium">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Blog
+            </a>
+        </div>
+    </div>
+
+    <!-- Article Header -->
+    <article class="bg-white pb-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Category Badge -->
+            <div class="mb-6">
+                <span id="category-badge" class="px-4 py-2 rounded-full text-sm font-semibold"></span>
+            </div>
+            
+            <!-- Title -->
+            <h1 id="article-title" class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight"></h1>
+            
+            <!-- Meta Info -->
+            <div class="flex items-center gap-4 mb-8 pb-8 border-b border-gray-200">
+                <img id="author-img" src="" alt="Author" class="w-14 h-14 rounded-full">
+                <div>
+                    <div id="author-name" class="font-semibold text-gray-900 text-lg"></div>
+                    <div id="read-time" class="text-gray-500"></div>
+                </div>
+            </div>
+            
+            <!-- Featured Image/Icon -->
+            <div id="featured-section" class="mb-12 rounded-2xl overflow-hidden">
+                <!-- Will be populated dynamically -->
+            </div>
+        </div>
+    </article>
+
+    <!-- Article Content -->
+    <section class="bg-white pb-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="article-content" class="article-content prose prose-lg max-w-none">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Posts -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Related Posts</h2>
+            <div id="related-posts" class="grid md:grid-cols-3 gap-8">
+                <!-- Related posts will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Subscribe to Our Newsletter</h2>
+            <p class="text-xl text-gray-600 mb-8">
+                Get the latest tutorials, career tips, and industry insights delivered to your inbox weekly.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary">
+                <button class="gradient-bg text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition shadow-lg">
+                    Subscribe
+                </button>
+            </div>
+            <p class="text-sm text-gray-500 mt-4">No spam. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">T</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">Traquiva</span>
+                    </div>
+                    <p class="text-sm text-gray-400">Master tech skills with AI-powered learning. From zero to industry-ready.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="features.html" class="hover:text-white transition">Features</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="projects.html" class="hover:text-white transition">Projects</a></li>
+                        <li><a href="mentors.html" class="hover:text-white transition">Mentors</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition">About</a></li>
+                        <li><a href="success.html" class="hover:text-white transition">Success Stories</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="privacy.html#cookies" class="hover:text-white transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-sm text-gray-400">© 2025 Traquiva. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100 });
+        
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Get blog ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const blogId = urlParams.get('id');
+
+        // Get blogs from localStorage
+        const blogs = JSON.parse(localStorage.getItem('traquiva_blogs') || '[]');
+        
+        // Featured blog data
+        const featuredBlog = {
+            id: 'featured',
+            title: "How to Land Your First Developer Job in 2025",
+            category: "career",
+            categoryLabel: "Career Advice",
+            excerpt: "A comprehensive guide to breaking into tech, from building your portfolio to acing technical interviews.",
+            author: "Sarah Martinez",
+            authorImg: "https://i.pravatar.cc/150?img=15",
+            readTime: "5 min read",
+            icon: "🚀",
+            gradient: "from-purple-500 to-pink-600",
+            badgeColor: "bg-purple-100 text-purple-700"
+        };
+
+        // Find the blog post
+        let blog;
+        if (blogId === 'featured') {
+            blog = featuredBlog;
+        } else {
+            blog = blogs.find(b => b.id == blogId);
+        }
+
+        if (blog) {
+            // Update page title
+            document.getElementById('page-title').textContent = `${blog.title} - Traquiva`;
+            
+            // Update article header
+            document.getElementById('category-badge').textContent = blog.categoryLabel;
+            document.getElementById('category-badge').className = `px-4 py-2 ${blog.badgeColor} rounded-full text-sm font-semibold`;
+            document.getElementById('article-title').textContent = blog.title;
+            document.getElementById('author-img').src = blog.authorImg;
+            document.getElementById('author-name').textContent = blog.author;
+            document.getElementById('read-time').textContent = blog.readTime;
+            
+            // Add featured image/icon
+            document.getElementById('featured-section').innerHTML = `
+                <div class="h-96 bg-gradient-to-br ${blog.gradient} flex items-center justify-center">
+                    <div class="text-white text-9xl">${blog.icon}</div>
+                </div>
+            `;
+            
+            // Generate article content (sample content)
+            const articleContent = `
+                <p class="text-xl text-gray-700 font-medium mb-8">${blog.excerpt}</p>
+                
+                <h2>Introduction</h2>
+                <p>Breaking into the tech industry can seem daunting, but with the right approach and preparation, you can land your first developer job faster than you think. This comprehensive guide will walk you through every step of the journey, from building your skills to acing the interview.</p>
+                
+                <h2>1. Build a Strong Foundation</h2>
+                <p>Before you start applying for jobs, make sure you have a solid understanding of the fundamentals. Focus on:</p>
+                <ul>
+                    <li><strong>Core programming concepts:</strong> Variables, data structures, algorithms, and object-oriented programming</li>
+                    <li><strong>Version control:</strong> Git and GitHub are essential tools for any developer</li>
+                    <li><strong>Web fundamentals:</strong> HTML, CSS, and JavaScript form the backbone of web development</li>
+                    <li><strong>Problem-solving skills:</strong> Practice coding challenges on platforms like LeetCode and HackerRank</li>
+                </ul>
+                
+                <h2>2. Create an Impressive Portfolio</h2>
+                <p>Your portfolio is your chance to showcase your skills to potential employers. Include 3-5 high-quality projects that demonstrate:</p>
+                <ul>
+                    <li>Clean, well-documented code</li>
+                    <li>Real-world problem-solving abilities</li>
+                    <li>Understanding of best practices and design patterns</li>
+                    <li>Ability to work with modern tools and frameworks</li>
+                </ul>
+                
+                <blockquote>
+                    "Your portfolio is often more important than your resume. It's proof that you can actually build things." - Senior Developer at Google
+                </blockquote>
+                
+                <h2>3. Network and Build Connections</h2>
+                <p>Networking is crucial in the tech industry. Here's how to get started:</p>
+                <ul>
+                    <li>Attend local meetups and tech events</li>
+                    <li>Engage with the developer community on Twitter and LinkedIn</li>
+                    <li>Contribute to open-source projects</li>
+                    <li>Join online communities like Dev.to, Reddit, and Discord servers</li>
+                </ul>
+                
+                <h2>4. Prepare for Technical Interviews</h2>
+                <p>Technical interviews can be challenging, but preparation is key. Focus on:</p>
+                <ul>
+                    <li><strong>Data structures and algorithms:</strong> Master arrays, linked lists, trees, graphs, sorting, and searching</li>
+                    <li><strong>System design:</strong> Understand how to design scalable systems</li>
+                    <li><strong>Behavioral questions:</strong> Prepare stories using the STAR method</li>
+                    <li><strong>Mock interviews:</strong> Practice with friends or use platforms like Pramp</li>
+                </ul>
+                
+                <h2>5. Tailor Your Applications</h2>
+                <p>Don't just send the same resume to every company. Instead:</p>
+                <ul>
+                    <li>Research the company and understand their tech stack</li>
+                    <li>Customize your resume to highlight relevant experience</li>
+                    <li>Write a compelling cover letter that shows your enthusiasm</li>
+                    <li>Follow up after submitting your application</li>
+                </ul>
+                
+                <h2>Conclusion</h2>
+                <p>Landing your first developer job takes time, effort, and persistence. Stay focused on continuous learning, build projects that showcase your skills, and don't get discouraged by rejections. Every interview is a learning opportunity that brings you one step closer to your goal.</p>
+                
+                <p>Remember, everyone starts somewhere. With dedication and the right approach, you'll be writing code professionally before you know it. Good luck on your journey!</p>
+            `;
+            
+            document.getElementById('article-content').innerHTML = articleContent;
+            
+            // Load related posts (exclude current post)
+            const relatedPosts = blogs
+                .filter(b => b.category === blog.category && b.id !== blog.id)
+                .slice(0, 3);
+            
+            if (relatedPosts.length > 0) {
+                document.getElementById('related-posts').innerHTML = relatedPosts.map(post => `
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                        <div class="h-48 bg-gradient-to-br ${post.gradient} flex items-center justify-center">
+                            <div class="text-white text-6xl">${post.icon}</div>
+                        </div>
+                        <div class="p-6">
+                            <span class="px-3 py-1 ${post.badgeColor} rounded-full text-xs font-semibold">${post.categoryLabel}</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-3 mb-2">${post.title}</h3>
+                            <p class="text-gray-600 mb-4 text-sm">${post.excerpt}</p>
+                            <a href="blog-detail.html?id=${post.id}" class="text-primary font-semibold hover:underline">Read More →</a>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                document.getElementById('related-posts').innerHTML = '<p class="text-gray-600">No related posts found.</p>';
+            }
+        } else {
+            // Blog not found
+            document.getElementById('article-title').textContent = 'Blog Post Not Found';
+            document.getElementById('article-content').innerHTML = '<p>Sorry, the blog post you\'re looking for doesn\'t exist. <a href="blog.html" class="text-primary hover:underline">Return to blog</a>.</p>';
+        }
+    </script>
+</body>
+</html>
